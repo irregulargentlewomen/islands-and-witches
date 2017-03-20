@@ -1,0 +1,57 @@
+"islands & witches" by Betsy Haibel and Elizabeth Yalkut
+
+Book 1 - the Map
+
+Chapter 1 - Naming Islands & Other Lands
+
+An island is a kind of room.
+
+Troy is an island. "The wreck of a once-mighty city."
+
+Aeaea is an island.
+
+Ogygia is an island.
+
+Scheria is an island.
+
+Ithaka is an island.
+
+Thrinacia is an island.
+
+The Open Ocean is a room.
+
+The Underworld is a room.
+
+Chapter 2 - Layout
+
+To lay out the islands:
+  now the Underworld is mapped north of Troy.
+
+When play begins, lay out the islands.
+
+Book 2 - the Witches
+
+A witch is a kind of person.
+
+Annoyance is a kind of value. The annoyances are calm, annoyed, or irate.  [add more levels.]
+
+Chapter 1 - Persephone
+
+Persephone is a witch. Persephone has an annoyance. Persephone is calm.
+
+Table of Persephone's lines
+annoyance line
+calm  "'How lovely to see you.' Persephone announces, as if to her court. You feel welcomed, perhaps excessively."
+annoyed "You again?"
+
+Book 3 - the Islands, and other Lands
+
+Chapter 1 - the Underworld
+
+Persephone is in the Underworld. "[if unvisited]Persephone's biding her time here until spring.[otherwise]Persephone is still here.[end if] [entrance line]"
+
+To say entrance line:
+  let annoyance level be the annoyance of Persephone;
+  let new line be the line corresponding to an annoyance of annoyance level in the Table of Persephone's lines;
+  say new line.
+
