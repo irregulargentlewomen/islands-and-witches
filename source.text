@@ -25,7 +25,8 @@ The Underworld is a room.
 Chapter 2 - Layout
 
 To lay out the islands:
-  now the Underworld is mapped north of Troy.
+  now the Underworld is mapped north of Troy;
+  now Troy is mapped south of the Underworld. 
 
 When play begins, lay out the islands.
 
@@ -48,10 +49,14 @@ Book 3 - the Islands, and other Lands
 
 Chapter 1 - the Underworld
 
-Persephone is in the Underworld. "[if unvisited]Persephone's biding her time here until spring.[otherwise]Persephone is still here.[end if] [entrance line]"
+Persephone is in the Underworld. "[if the Underworld is unvisited]Persephone's biding her time here until spring.[otherwise]Persephone is still here.[increase annoyance][end if] [entrance line]"
 
 To say entrance line:
   let annoyance level be the annoyance of Persephone;
   let new line be the line corresponding to an annoyance of annoyance level in the Table of Persephone's lines;
   say new line.
 
+[augh, is this *really* the right way to do this? the manual says so, but I hateses it.]
+To say increase annoyance:
+  if Persephone is calm:
+    Now Persephone is annoyed.
