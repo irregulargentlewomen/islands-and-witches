@@ -25,8 +25,8 @@ The Underworld is a room.
 Chapter 2 - Layout
 
 To lay out the islands:
-  now the Underworld is mapped north of Troy;
-  now Troy is mapped south of the Underworld. 
+  Let Elsewhere be the list of islands;
+  say Elsewhere.
 
 When play begins, lay out the islands.
 
@@ -34,7 +34,7 @@ Book 2 - the Witches
 
 A witch is a kind of person.
 
-Annoyance is a kind of value. The annoyances are calm, annoyed, or irate.  [add more levels.]
+Annoyance is a kind of value. The annoyances are calm, annoyed, and irate.  [add more levels.]
 
 Chapter 1 - Persephone
 
@@ -44,6 +44,7 @@ Table of Persephone's lines
 annoyance line
 calm  "'How lovely to see you.' Persephone announces, as if to her court. You feel welcomed, perhaps excessively."
 annoyed "You again?"
+irate "AUGH"
 
 Book 3 - the Islands, and other Lands
 
@@ -58,5 +59,7 @@ To say entrance line:
 
 [augh, is this *really* the right way to do this? the manual says so, but I hateses it.]
 To say increase annoyance:
+  if Persephone is annoyed:
+    Now Persephone is irate;
   if Persephone is calm:
     Now Persephone is annoyed.
