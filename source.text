@@ -8,8 +8,6 @@ An island is a kind of room.
 
 Troy is an island. "The wreck of a once-mighty city."
 
-Aeaea is an island.
-
 Ogygia is an island.
 
 Scheria is an island.
@@ -18,17 +16,30 @@ Ithaka is an island.
 
 Thrinacia is an island.
 
-The Open Ocean is a room.
-
 The Underworld is a room.
 
 Chapter 2 - Layout
 
-To lay out the islands:
-  Let Elsewhere be the list of islands;
-  say Elsewhere.
+An island can be free-floating or stabilized. An island is usually free-floating.
 
-When play begins, lay out the islands.
+Before going a direction (called way):
+  let Elsewhere be the list of free-floating islands;
+  if the location is an island:
+    remove the location from Elsewhere;
+  if the location is not Ithaka:
+    remove Ithaka from Elsewhere;
+  add the Underworld to Elsewhere;
+  add Elsewhere to Elsewhere;
+  add Elsewhere to Elsewhere;
+  add Ithaka to Elsewhere;
+  sort Elsewhere in random order;
+  let next be entry 1 of Elsewhere;
+  if next is an island:
+    say next;
+    determine the current symptoms of next;
+  change the way exit of the location to next;
+  let reverse be the opposite of way;
+  change the reverse exit of next to the location.
 
 Book 2 - the Witches
 
@@ -46,7 +57,14 @@ calm  "'How lovely to see you.' Persephone announces, as if to her court. You fe
 annoyed "You again?"
 irate "AUGH"
 
+Chapter 2 - Kirke
+
 Book 3 - the Islands, and other Lands
+
+A symptom is a kind of thing. A symptom is usually scenery.
+
+To determine the current symptoms of (here - an island):
+  now the descriptions 
 
 Chapter 1 - the Underworld
 
@@ -63,3 +81,13 @@ To say increase annoyance:
     Now Persephone is irate;
   if Persephone is calm:
     Now Persephone is annoyed.
+    
+Chapter 2 - Aeaea
+
+Aeaea is an island. 
+
+Kirke is in Aeaea.
+
+Table of Aeaea's potential symptoms
+topic description
+"pigs"  "Five pigs run by your feet, grunting affectionately."
