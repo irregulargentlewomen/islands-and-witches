@@ -50,6 +50,8 @@ A witch is a kind of person.
 
 Annoyance is a kind of value. The annoyances are calm, annoyed, exasperated, vexed, irked, irate, and furious.
 
+Understand "talk to [someone]" as talking to. Understand "talk to [something]" as talking to. Talking to is an action applying to one visible thing.
+
 Chapter 1 - Persephone
 
 Persephone is a witch. Persephone has an annoyance. Persephone is calm.
@@ -65,6 +67,19 @@ irate	"Persephone leans back in her bone throne. 'You are not welcome here,' she
 furious	"Persephone shrieks, wordless and inhuman, like a fox crying. You curl into a ball around your knees."
 
 Chapter 2 - Kirke
+
+Chapter 3 - Penelope
+
+Penelope is a witch.
+
+Instead of talking to Penelope for the first time:
+	say "You greet your wife. She grimaces."
+	
+Instead of talking to Penelope:
+	say "Penelope interrupts you. 'Do not speak and you say my name. If you need to speak, you will say my name.'"
+
+Instead of answering Penelope that "silence":
+	End the story saying "Penelope has recognized you. Your journey home has ended."
 
 Book 3 - the Islands, and other Lands
 
@@ -133,7 +148,7 @@ Nausikaa is a witch. Nausikaa is in Scheria.
 
 Chapter 8 - Ithaka
 
-Penelope is a witch. Penelope is in Ithaka.
+Penelope is in Ithaka.
 
 [Riddle: Do not speak and you say my name; if you need to speak, you will say my name.
 Solution: Silence.]
