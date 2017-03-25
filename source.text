@@ -40,9 +40,6 @@ Before going a direction (called way):
 	add Ithaka to Elsewhere;
 	sort Elsewhere in random order;
 	let next be entry 1 of Elsewhere;
-	if next is an island:
-		say next;
-		determine the current symptoms of next;
 	change the way exit of the location to next;
 	let reverse be the opposite of way;
 	change the reverse exit of next to the location.
@@ -70,11 +67,6 @@ furious	"Persephone shrieks, wordless and inhuman, like a fox crying. You curl i
 Chapter 2 - Kirke
 
 Book 3 - the Islands, and other Lands
-
-A symptom is a kind of thing. A symptom is usually scenery.
-
-To determine the current symptoms of (here - an island):
-  do nothing.
 
 Chapter 1 - the Underworld
 
@@ -151,7 +143,3 @@ Chapter 2 - Aeaea
 Aeaea is an island. 
 
 Kirke is in Aeaea.
-
-Table of Aeaea's potential symptoms
-topic	description
-"pigs"	"Five pigs run by your feet, grunting affectionately."
