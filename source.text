@@ -44,13 +44,38 @@ Before going a direction (called way):
 	let reverse be the opposite of way;
 	change the reverse exit of next to the location.
 
+To stabilize (i - an island):
+	say "The ground rumbles and the breeze stills.";
+	now i is stabilized.
+
 Book 2 - the Witches
 
-A witch is a kind of person.
+A witch is a kind of person. A witch has a table name called the dialogue table.
 
 Annoyance is a kind of value. The annoyances are calm, annoyed, exasperated, vexed, irked, irate, and furious.
 
-Understand "talk to [someone]" as talking to. Understand "talk to [something]" as talking to. Talking to is an action applying to one visible thing.
+Asking someone about something is speech. Telling someone about something is speech. Answering someone that something is speech. Asking someone for something is speech.
+
+Carry out telling a witch about something:
+	repeat through the dialogue table of the noun:
+		if the topic understood includes topic entry:
+			say "[reply entry][paragraph break]";
+			rule succeeds;
+	say "[the noun] looks at you blankly.".
+
+Carry out asking a witch about something:
+	repeat through the dialogue table of the noun:
+		if the topic understood includes topic entry:
+			say "[reply entry][paragraph break]";
+			rule succeeds;
+	say "[the noun] looks at you blankly.".
+
+Carry out answering a witch that something:
+	repeat through the dialogue table of the noun:
+		if the topic understood includes topic entry:
+			say "[reply entry][paragraph break]";
+			rule succeeds;
+	say "[the noun] looks at you blankly.".
 
 Chapter 1 - Persephone
 
@@ -70,17 +95,28 @@ Chapter 2 - Kirke
 
 Chapter 3 - Penelope
 
-Penelope is a witch.
+Penelope is a witch. The dialogue table of Penelope is the Table of Penelope's responses.
 
-Instead of talking to Penelope for the first time:
-	say "You greet your wife. She grimaces."
-	
-Instead of talking to Penelope:
-	say "Penelope interrupts you. 'Do not speak and you say my name. If you need to speak, you will say my name.'"
+Table of Penelope's responses
+topic	reply
+"silence/nothing"	"[win game]"
 
-Instead of answering Penelope that "silence":
-	End the story saying "Penelope has recognized you. Your journey home has ended."
+Before speech in the presence of Penelope for the first time:
+	say "You greet your wife. She grimaces. 'Do not speak and you say my name. If you need to speak, you will say my name.'";
+	stop the action.	
 
+To say Penelope's riddle:
+	say "[one of]Penelope interrupts you. [or]Penelope cuts you off with a sharp shake of her head. [at random]'Do not speak and you say my name. If you need to speak, you will say my name.'".
+
+Report answering Penelope that something:
+	say Penelope's riddle;
+	stop the action.
+
+To say win game:
+	end the story saying "Penelope has recognized you. Your journey home has ended." instead.
+
+Test Penelope with "gonear penelope / answer penelope that lies / answer penelope silence".
+ 
 Book 3 - the Islands, and other Lands
 
 Chapter 1 - the Underworld
@@ -149,12 +185,7 @@ Nausikaa is a witch. Nausikaa is in Scheria.
 Chapter 8 - Ithaka
 
 Penelope is in Ithaka.
-
-[Riddle: Do not speak and you say my name; if you need to speak, you will say my name.
-Solution: Silence.]
     
 Chapter 2 - Aeaea
 
 Aeaea is an island. 
-
-Kirke is in Aeaea.
