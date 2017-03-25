@@ -61,21 +61,24 @@ Carry out telling a witch about something:
 		if the topic understood includes topic entry:
 			say "[reply entry][paragraph break]";
 			rule succeeds;
-	say "[the noun] looks at you blankly.".
+	say "[the noun] looks at you blankly.";
+	stop the action.
 
 Carry out asking a witch about something:
 	repeat through the dialogue table of the noun:
 		if the topic understood includes topic entry:
 			say "[reply entry][paragraph break]";
 			rule succeeds;
-	say "[the noun] looks at you blankly.".
+	say "[the noun] looks at you blankly.";
+	stop the action.
 
 Carry out answering a witch that something:
 	repeat through the dialogue table of the noun:
 		if the topic understood includes topic entry:
 			say "[reply entry][paragraph break]";
 			rule succeeds;
-	say "[the noun] looks at you blankly.".
+	say "[the noun] looks at you blankly.";
+	stop the action.
 
 Chapter 1 - Persephone
 
@@ -93,7 +96,38 @@ furious	"Persephone shrieks, wordless and inhuman, like a fox crying. You curl i
 
 Chapter 2 - Kirke
 
-Chapter 3 - Penelope
+Chapter 3 - Lampetia
+
+Lampetia is a witch. The dialogue table of Lampetia is the Table of Lampetia's responses.
+
+Table of Lampetia's responses
+topic	reply
+"cows"	"My father's."
+"night and day"	"Lampetia nods.[paragraph break][stabilize Thrinacia]"
+
+To say Lampetia's riddle:
+	If Thrinacia is free-floating:
+		say "There are two sisters: one gives birth to the other who then gives birth to the first. Who are they?".
+
+Report asking Lampetia about something:
+	say Lampetia's riddle;
+	stop the action.
+
+Report telling Lampetia about something:
+	say Lampetia's riddle;
+	stop the action.
+
+Report answering Lampetia that something:
+	say Lampetia's riddle;
+	stop the action.
+
+To say stabilize Thrinacia:
+	stabilize Thrinacia;
+	stop the action.
+
+Test Lampetia with "gonear Lampetia / ask Lampetia about cows / answer lampetia night and day".
+
+Chapter 4 - Penelope
 
 Penelope is a witch. The dialogue table of Penelope is the Table of Penelope's responses.
 
@@ -168,6 +202,12 @@ Solution: Bring Kirke fresh water from Scheria.]
 
 Chapter 5 - Thrinacia
 
+A bee is a kind of animal.
+
+Lampetia is in Thrinacia.
+
+The swarm is a thing. The swarm is in Thrinacia. "You hear bees buzzing about."
+
 [Riddle: There are two sisters: one gives birth to the other who then gives birth to the first. Who are they?
 Solution: Night and day.]
 
@@ -185,7 +225,3 @@ Nausikaa is a witch. Nausikaa is in Scheria.
 Chapter 8 - Ithaka
 
 Penelope is in Ithaka.
-    
-Chapter 2 - Aeaea
-
-Aeaea is an island. 
