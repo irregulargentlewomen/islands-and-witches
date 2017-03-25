@@ -78,20 +78,30 @@ To determine the current symptoms of (here - an island):
 
 Chapter 1 - the Underworld
 
-Persephone is in the Underworld. "[if the Underworld is unvisited]Persephone's biding her time here until spring.[otherwise]Persephone is still here.[increase annoyance][end if] [entrance line]"
+Persephone is in the Underworld. "[if the Underworld is unvisited]Persephone's biding her time here until spring.[otherwise]Persephone is still here.[end if] [entrance line]"
 
 To say entrance line:
 	let annoyance level be the annoyance of Persephone;
 	let new line be the line corresponding to an annoyance of annoyance level in the Table of Persephone's lines;
 	say new line.
+	
+Before going to the Underworld:
+	if the Underworld is visited, increase Persephone's annoyance.
 
-[augh, is this *really* the right way to do this? the manual says so, but I hateses it.]
-To say increase annoyance:
-	if Persephone is annoyed:
-		Now Persephone is irate;
-	if Persephone is calm:
-		Now Persephone is annoyed.
-
+To increase Persephone's annoyance:
+	if Persephone is irate:
+		now Persephone is furious;
+	otherwise if Persephone is irked:
+		now Persephone is irate;
+	otherwise if Persephone is vexed:
+		now Persephone is irked;
+	otherwise if Persephone is exasperated:
+		now Persephone is vexed;
+	otherwise if Persephone is annoyed:
+		now Persephone is exasperated;
+	otherwise if Persephone is calm:
+		now Persephone is annoyed.
+			
 Chapter 2 - Troy
 
 Andromache is a witch. Andromache is in Troy.
