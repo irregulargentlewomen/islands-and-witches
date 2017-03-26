@@ -50,35 +50,12 @@ To stabilize (i - an island):
 
 Book 2 - the Witches
 
-A witch is a kind of person. A witch has a table name called the dialogue table.
+A witch is a kind of person. A witch has a table name called the dialogue table. A witch has some text called the solution text.
 
 Annoyance is a kind of value. The annoyances are calm, annoyed, exasperated, vexed, irked, irate, and furious.
 
-Asking someone about something is speech. Telling someone about something is speech. Answering someone that something is speech. Asking someone for something is speech.
-
-Carry out telling a witch about something:
-	repeat through the dialogue table of the noun:
-		if the topic understood includes topic entry:
-			say "[reply entry][paragraph break]";
-			rule succeeds;
-	say "[the noun] looks at you blankly.";
-	stop the action.
-
-Carry out asking a witch about something:
-	repeat through the dialogue table of the noun:
-		if the topic understood includes topic entry:
-			say "[reply entry][paragraph break]";
-			rule succeeds;
-	say "[the noun] looks at you blankly.";
-	stop the action.
-
-Carry out answering a witch that something:
-	repeat through the dialogue table of the noun:
-		if the topic understood includes topic entry:
-			say "[reply entry][paragraph break]";
-			rule succeeds;
-	say "[the noun] looks at you blankly.";
-	stop the action.
+Needing relates one witch to one thing. The verb to need means the needing relation.
+Living on relates one witch to one island. The verb to live on means the living on relation.
 
 Chapter 1 - Persephone
 
@@ -103,6 +80,7 @@ Lampetia is a witch. The dialogue table of Lampetia is the Table of Lampetia's r
 Table of Lampetia's responses
 topic	reply
 "cows"	"My father's."
+"bees"	"[one of]Few too many of them if you ask me.[or]My father doesn't care one whit for them, and neither do I.[at random]"
 "night and day"	"Lampetia nods.[paragraph break][stabilize Thrinacia]"
 
 To say Lampetia's riddle:
@@ -125,9 +103,15 @@ To say stabilize Thrinacia:
 	stabilize Thrinacia;
 	stop the action.
 
-Test Lampetia with "gonear Lampetia / ask Lampetia about cows / answer lampetia night and day".
+Test Lampetia with "gonear Lampetia / ask Lampetia about cows / ask lampetia about bees / answer lampetia night and day".
 
-Chapter 4 - Penelope
+Chapter 4 - Calypso
+
+Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "WRITEME". Calypso lives on Ogygia.
+
+Test Calypso with "gonear calypso / gonear lampetia / follow bees / take beehive / gonear calypso / give calypso beehive".
+
+Chapter 5 - Penelope
 
 Penelope is a witch. The dialogue table of Penelope is the Table of Penelope's responses.
 
@@ -166,18 +150,7 @@ Before going to the Underworld:
 	if the Underworld is visited, increase Persephone's annoyance.
 
 To increase Persephone's annoyance:
-	if Persephone is irate:
-		now Persephone is furious;
-	otherwise if Persephone is irked:
-		now Persephone is irate;
-	otherwise if Persephone is vexed:
-		now Persephone is irked;
-	otherwise if Persephone is exasperated:
-		now Persephone is vexed;
-	otherwise if Persephone is annoyed:
-		now Persephone is exasperated;
-	otherwise if Persephone is calm:
-		now Persephone is annoyed.
+	if the annoyance of Persephone is less than furious, now the annoyance of Persephone is the annoyance after the annoyance of Persephone.
 			
 Chapter 2 - Troy
 
@@ -202,21 +175,24 @@ Solution: Bring Kirke fresh water from Scheria.]
 
 Chapter 5 - Thrinacia
 
-A bee is a kind of animal.
-
 Lampetia is in Thrinacia.
 
-The swarm is a thing. The swarm is in Thrinacia. "You hear bees buzzing about."
+The swarm is a thing. Understand "bees" as the swarm. Understand "bee" as the swarm. The swarm is in Thrinacia. "You hear bees buzzing about." Instead of taking the swarm, say "A bee stings your leather glove and dies."
 
-[Riddle: There are two sisters: one gives birth to the other who then gives birth to the first. Who are they?
-Solution: Night and day.]
+The beehive is a thing. The beehive is in Hammerspace.
+
+Following is an action applying to one visible thing. Understand "follow [something]" as following.
+
+Instead of following the swarm:
+	if the beehive is in Hammerspace or the beehive is in Thrinacia:
+		say "You follow the bees over the island, gingerly sidestepping cows and their dung. You find a beehive, high in a tree.";
+		move the beehive to Thrinacia;
+	otherwise:
+		say "The bees mill about aimlessly."
 
 Chapter 6 - Ogygia
 
-Calypso is a witch. Calypso is in Ogygia.
-
-[Problem: Calypso's wine has gone sour.
-Solution: Bring Calypso bees from Thrinacia.]
+Calypso is in Ogygia.
 
 Chapter 7 - Scheria
 
@@ -225,3 +201,56 @@ Nausikaa is a witch. Nausikaa is in Scheria.
 Chapter 8 - Ithaka
 
 Penelope is in Ithaka.
+
+Book 4 - Interactions
+
+Chapter 1 - Speech
+
+Asking someone about something is speech. Telling someone about something is speech. Answering someone that something is speech. Asking someone for something is speech.
+
+Carry out telling a witch about something:
+	repeat through the dialogue table of the noun:
+		if the topic understood includes topic entry:
+			say "[reply entry][paragraph break]";
+			rule succeeds;
+	say "[the noun] looks at you blankly.";
+	stop the action.
+
+Carry out asking a witch about something:
+	repeat through the dialogue table of the noun:
+		if the topic understood includes topic entry:
+			say "[reply entry][paragraph break]";
+			rule succeeds;
+	say "[the noun] looks at you blankly.";
+	stop the action.
+
+Carry out answering a witch that something:
+	repeat through the dialogue table of the noun:
+		if the topic understood includes topic entry:
+			say "[reply entry][paragraph break]";
+			rule succeeds;
+	say "[the noun] looks at you blankly.";
+	stop the action.
+
+Chapter 2 - Barter Puzzles
+
+The block giving rule is not listed in the check giving it to rules.
+
+Check giving (this is the polite refusal of unwanted objects rule):
+	unless the noun interests the second noun: 
+		say "[The second noun] refuses [the noun]." instead.
+
+Report giving:
+	say "You give [the second noun] [the noun]. She smiles."
+
+After giving:
+	solve the problem of the second noun.
+
+To decide whether (item - a thing) interests (character - a person): 
+	if the character needs the item, yes;
+	no.
+
+To solve the problem of (witch - a witch):
+	Say the solution text of the witch;
+	Stabilize the island to which the witch relates by the living on relation.
+	
