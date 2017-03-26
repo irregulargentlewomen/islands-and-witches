@@ -10,7 +10,7 @@ An island is a kind of room.
 
 Troy is an island. "The wreck of a once-mighty city. A hill by a river mouth. Double defensive walls ring the city, covered in scorch marks and badly damaged. There are bodies piled against the walls. Bronze arrowheads and broken spear-shafts litter the ground. Fires smoulder in the streets."
 
-Djerba is an island. "Lizards dangle from boughs of trees. A woman is wearing a white khiton. She is wearing gold and bronze pins in her hair."
+Djerba is an island. "Lizards dangle from boughs of trees."
 
 Aeaea is an island. "Rosemary bushes as tall as a man. The air is full of scarlet and onyx bees, twice as big as they should be. A dozen ivory dice are lying in a bed of dark-green moss. Blindfolded herms flank a path from the shore into a grove of pine trees. There is a small stone house with yellow smoke emerging. Wolves, lions, and deer wander the island."
 
@@ -52,7 +52,8 @@ To sail boldly into the unknown:
 		remove the location from Elsewhere;
 	if the location is not Ithaka:
 		remove Ithaka from Elsewhere;
-	add the Underworld to Elsewhere;
+	if the location is not the Underworld:
+		add the Underworld to Elsewhere;
 	add the Open Ocean to Elsewhere;
 	add Elsewhere to Elsewhere;
 	add Elsewhere to Elsewhere;
@@ -115,7 +116,12 @@ Chapter 2 - Andromache
 [Problem: Andromache must burn Astyanax's body.
 Solution: Bring Andromache a rosemary branch from Aeaea.]
 
-Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry.". Andromache lives on Troy.
+Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry.". Andromache lives on Troy. The dialogue table of Andromache is the Table of Andromache's responses.
+
+Table of Andromache's responses
+topic	reply
+"Troy"	"She nearly spits. 'You've got nerve. You might as well ask after my son, or how I felt as the battle raged.'"
+"son/Astynax"	"'WRITEME something that prompts for the rosemary branch"
 
 Test Andromache with "gonear andromache / gonear kirke / take rosemary branch / gonear andromache / give andromache rosemary branch".
 
@@ -124,7 +130,13 @@ Chapter 3 - Adah
 [Problem: Djerba's fire has gone out.
 Solution: Bring fire from Troy.]
 
-Adah is a witch. Adah needs a piece of driftwood. Adah has the solution text "Adah smiles dreamily and touches your cheek. 'Thank you, and may you reach your destination, O wanderer.'". Adah lives on Djerba.
+Adah is a witch. Adah needs a piece of driftwood. Adah has the solution text "Adah smiles dreamily and touches your cheek. 'Thank you, and may you reach your destination, O wanderer.'". Adah lives on Djerba. The dialogue table of Adah is the Table of Adah's responses.
+
+Table of Adah's responses
+topic	reply
+"lotos/lotus"	"Adah smiles dreamily."
+"name"	"'Adah,' she murmurs."
+"fire/brazier"	"Adah gestures to the unlit brazier. [description of the brazier]"
 
 Test Adah with "gonear Adah / gonear andromache / take driftwood / gonear Adah / give Adah driftwood / light driftwood / gonear andromache / light driftwood / gonear Adah / give Adah driftwood".
 
@@ -141,8 +153,9 @@ topic	reply
 "deer"	"'Too tall,' Kirke says. 'Spindly-legged. I worry that they'll trip over logs and die immobile in the forest.'"
 "pigs"	"Kirke raises an eyebrow. 'What pigs, wanderer? Or are you offering an opinion?'[paragraph break]You back down hurriedly from her threat."
 "bears"	"'Gluttons. Always stealing my sister-witches' honey.'"
+"bees"	"'Some of my sister-witches are careless of theirs. I am not.'"
 
-Test Kirke with "gonear kirke / ask kirke about moly / give kirke waterskin / gonear nausikaa / fill waterskin / follow nausikaa / ask nausikaa about water / follow nausikaa / fill waterskin / gonear kirke / give kirke waterskin"
+Test Kirke with "gonear kirke / ask kirke about moly / give kirke waterskin / gonear nausikaa / fill waterskin / ask nausikaa about water / fill waterskin / gonear kirke / give kirke waterskin"
 
 To say remember waterskin:
 	If the waterskin is in Hammerspace:
@@ -220,20 +233,13 @@ Before speech in the presence of Nausikaa:
 	Unless Nausikaa is trusting or the topic understood includes "dogs":
 		say "Nausikaa frowns at you skeptically." instead.
 
-Instead of following Nausikaa:
-	if Nausikaa knows "water":
-		now Scheria is watery;
-		say "She leads you to a clear spring.";
-	otherwise:
-		say "Nausikaa looks at you skeptically. You stop, to keep her trust.".
-
 Table of Nausikaa's responses
 topic	reply
 "dogs"	"Nausikaa can't hide her smile. 'My father breeds the best hounds. This is Eurymedusa, I named her when I was little, after my nurse from Aperaea, and this is Charis, my brother's favorite, she can track a bird through the air, and just see how pretty she is, all dappled like shadows.'"
-"water"	"This is where I go swimming with my sisters, and where we wash our best clothes. It's a good place for ball games while the laundry dries.[learn about water]"
+"fabric/cloth/laundry/water"	"'This is where I go swimming with my sisters, and where we wash our best clothes. It's a good place for ball games while the laundry dries.'[learn about water]"
 
 To say learn about water:
-	now Nausikaa knows "water";
+	now Scheria is watery;
 
 Test Nausikaa with "gonear nausikaa / ask nausikaa about water / ask nausikaa about dogs / pet dogs / ask nausikaa about water".
 
@@ -282,9 +288,11 @@ To increase Persephone's annoyance:
 			
 Chapter 2 - Troy
 
-Andromache is in Troy.
+Andromache is in Troy. "Andromache stands unbowed before you." Instead of examining Andromache, try asking Andromache about "Troy".
 
-A piece of driftwood is a branch. A piece of driftwood is in Troy.
+The city is scenery in Troy. The hill is scenery in Troy. The walls are scenery in Troy. Scorch marks are scenery in Troy. Bodies are scenery in Troy. Arrowheads are scenery in Troy. Spear-shafts are scenery in Troy. Fire is scenery in Troy. Understand "fires" as fire.
+
+A piece of driftwood is a branch. A piece of driftwood is in Troy. "Driftwood lies scattered about the dead beach."
 
 Instead of burning the piece of driftwood:
 	if the location is Troy:
@@ -295,13 +303,17 @@ Instead of burning the piece of driftwood:
 
 Chapter 3 - Djerba
 
-Adah is in Djerba.
+Adah is in Djerba. "A woman is wearing a white khiton. She is wearing gold and bronze pins in her hair." Understand "woman" as Adah. Instead of examining Adah, try asking Adah about "name".
+
+The brazier is a thing that is fixed in place. The brazier is in Djerba. "An unlit brazier." The description of the brazier is "Some charcoal remains in its bowl."
 
 Chapter 4 - Aeaea
 
 Kirke is in Aeaea.
 
 The rosemary branch is a thing. The rosemary branch is in Aeaea.
+
+Instead of taking the swarm in the presence of Kirke, try asking Kirke about "bees". Instead of examining the swarm in the presence of Kirke, try asking Kirke about "bees".
 
 Chapter 5 - Thrinacia
 
@@ -335,6 +347,10 @@ The rhyton is scenery in Scheria. The description of the rhyton is "Horn, barely
 Beer is scenery in Scheria. The description of beer is "Fresh, from the smell of it." Instead of drinking the beer, say "You'd rather not presume on Nausikaa's hospitality. Her parents would know." Instead of taking the beer, try drinking the beer.
 
 The fabric is scenery in Scheria. The description of fabric is "Newly laundered and half-dry."
+
+After examining the fabric:
+	say "Nausikaa notices you thumbing the fabric, and raises a hand to stop you.";
+	try asking Nausikaa about "fabric".	
 
 The boys are scenery in Scheria. The description of boys is "Not old enough for war, yet, and therefore still lucky." 
 
