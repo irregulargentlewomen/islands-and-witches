@@ -1,5 +1,7 @@
 "islands & witches" by Betsy Haibel and Elizabeth Yalkut
 
+Release along with an interpreter.
+
 Book 1 - the Map
 
 Chapter 1 - Naming Islands & Other Lands
@@ -16,7 +18,7 @@ Thrinacia is an island. "Cows wander the island. A man is drinking pale yellow j
 
 Ogygia is an island. "Apple trees are growing with white blossoms and blood-red fruit at the same time. Cypress trees reach to the sky. Birds, eerily silent, are flapping their wings; there are no bird’s-nests, but fallen feathers carpet the ground. Calypso’s hair is made of feathers."
 
-Scheria is an island. "A rhyton in the shape of a dog’s head holds barley beer. Large white fabric sheets flutter in the breeze. Fawn-colored sighthounds lie in the shade."
+Scheria is an island. "A rhyton in the shape of a dog’s head holds barley beer. Large white fabric sheets flutter in the breeze."
 
 Ithaka is an island. "The hills are made of pale cream and purple-gray stone. A woman is carrying a bronze-and-gold bowl with lead loom-weights in it. A woman is carrying a basket full of unwashed wool. A goat with yellow eyes follows you."
 
@@ -179,7 +181,11 @@ Test Calypso with "gonear calypso / gonear lampetia / follow bees / take beehive
 
 Chapter 7 - Nausikaa
 
-Nausikaa is a witch. The dialogue table of Nausikaa is the Table of Nausikaa's responses.
+Nausikaa is a witch. The dialogue table of Nausikaa is the Table of Nausikaa's responses. Nausikaa can be trusting or skeptical. Nausikaa is skeptical. The solution text of Nausikaa is "The wariness fades from Nausikaa's expression. ".
+
+Before speech in the presence of Nausikaa:
+	Unless nausikaa is trusting or the topic understood includes "dogs":
+		say "Nausikaa frowns at you skeptically." instead.
 
 Instead of following Nausikaa:
 	if Nausikaa knows "water":
@@ -190,10 +196,13 @@ Instead of following Nausikaa:
 
 Table of Nausikaa's responses
 topic	reply
+"dogs"	"Nausikaa can't hide her smile."
 "water"	"WRITEME[learn about water]"
 
 To say learn about water:
 	now Nausikaa knows "water";
+
+Test Nausikaa with "gonear nausikaa / ask nausikaa about water / ask nausikaa about dogs / pet dogs / ask nausikaa about water".
 
 Chapter 8 - Penelope
 
@@ -282,7 +291,7 @@ Calypso is in Ogygia.
 
 Chapter 7 - Scheria
 
-Nausikaa is in Scheria. Scheria is arid.
+Nausikaa is in Scheria. Scheria is arid. The dogs are a thing. The dogs are in Scheria. "Fawn-colored sighthounds lie in the shade."
 
 Chapter 8 - Ithaka
 
@@ -378,3 +387,13 @@ Report filling:
 Following is an action applying to one visible thing. Understand "follow [something]" as following.
 
 Understand "scrounge for [something]" as taking. Understand "scrounge [something]" as taking.
+
+Petting is an action applying to one thing. Understand "pet [something]" as petting.
+
+Check petting:
+	unless the noun is dogs, say "That doesn't seem like a good idea." instead.
+
+Carry out petting:
+	now Nausikaa is trusting;
+	say "You gently scratch behind their ears.[paragraph break]";
+	solve the problem of Nausikaa.
