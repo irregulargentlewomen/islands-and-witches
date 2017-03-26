@@ -139,7 +139,8 @@ Kirke is a witch. Kirke needs a full waterskin brought from Scheria. Kirke has t
 
 Table of Kirke's responses
 topic	reply
-"moly"	"WRITEME [remember waterskin]"
+"moly/drugs/potion"	"Kirke sniffs. 'My art is as it ever was. My spring has gone sour.'[paragraph break][remember waterskin]"
+"deer"	"'Too tall,' Kirke says. 'Spindly-legged. I worry that they'll trip over logs and die immobile in the forest.'"
 
 Test Kirke with "gonear kirke / ask kirke about moly / give kirke waterskin / gonear nausikaa / fill waterskin / follow nausikaa / ask nausikaa about water / follow nausikaa / fill waterskin / gonear kirke / give kirke waterskin"
 
@@ -340,24 +341,33 @@ Carry out telling a witch about something:
 		if the topic understood includes topic entry:
 			say "[reply entry][paragraph break]";
 			rule succeeds;
-	say "[the noun] looks at you blankly.";
+	if the noun is not Penelope, say "[the noun] looks at you blankly.";
 	stop the action.
+
+Report telling a witch about something:
+	stop the action instead.
 
 Carry out asking a witch about something:
 	repeat through the dialogue table of the noun:
 		if the topic understood includes topic entry:
 			say "[reply entry][paragraph break]";
 			rule succeeds;
-	say "[the noun] looks at you blankly.";
+	if the noun is not Penelope, say "[the noun] looks at you blankly.";
 	stop the action.
+
+Report asking a witch about something:
+	stop the action instead.
 
 Carry out answering a witch that something:
 	repeat through the dialogue table of the noun:
 		if the topic understood includes topic entry:
 			say "[reply entry][paragraph break]";
 			rule succeeds;
-	say "[the noun] looks at you blankly.";
+	if the noun is not Penelope, say "[the noun] looks at you blankly.";
 	stop the action.
+
+Report answering a witch that something:
+	stop the action instead.
 
 Chapter 2 - Barter Puzzles
 
