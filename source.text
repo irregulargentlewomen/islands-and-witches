@@ -60,6 +60,8 @@ Knowing relates one witch to various topics. The verb to know means the knowing 
 
 The waterskin is a thing. The waterskin is in Hammerspace. The waterskin can be full or empty. The waterskin is full. Sourcing relates a thing to one room. The verb to be brought from means the sourcing relation. The waterskin is brought from Troy. The printed name of the waterskin is "waterskin ([if full]full of water from [the island to which the waterskin relates by the sourcing relation][otherwise]empty[end if])".
 
+A branch is a kind of thing. A branch can be lit or unlit. A branch is usually unlit.
+
 Chapter 1 - Persephone
 
 Persephone is a witch. Persephone has an annoyance. Persephone is calm.
@@ -74,7 +76,18 @@ irked	"'What do you think would be a fitting punishment for an uninvited guest,'
 irate	"Persephone leans back in her bone throne. 'You are not welcome here,' she says. Your skin begins to soften and dissolve."
 furious	"Persephone shrieks, wordless and inhuman, like a fox crying. You curl into a ball around your knees."
 
-Chapter 2 - Kirke
+Chapter 2 - Nameless
+
+[THERE IS LITERALLY NO SOURCE THAT NAMES THE LOTOS-EATERS AS INDIVIDUALS WHAT THE FUCK.]
+
+[Problem: Djerba's fire has gone out.
+Solution: Bring fire from Troy.]
+
+Nameless is a witch. Nameless needs a piece of driftwood. Nameless has the solution text "WRITEME".
+
+Test Nameless with "gonear nameless / gonear andromache / take driftwood / gonear nameless / give nameless driftwood / light driftwood / gonear andromache / light driftwood / gonear nameless / give nameless driftwood".
+
+Chapter 3 - Kirke
 
 [Problem: Kirke's moly is malfunctioning and she can't choose what animal she turns visitors into.
 Solution: Bring Kirke fresh water from Scheria.]
@@ -114,7 +127,7 @@ Ithaka	"WRITEME"
 Open Ocean	"WRITEME"
 Underworld	"WRITEME"
 
-Chapter 3 - Lampetia
+Chapter 4 - Lampetia
 
 Lampetia is a witch. The dialogue table of Lampetia is the Table of Lampetia's responses.
 
@@ -146,7 +159,7 @@ To say stabilize Thrinacia:
 
 Test Lampetia with "gonear Lampetia / ask Lampetia about cows / ask lampetia about bees / answer lampetia night and day".
 
-Chapter 4 - Calypso
+Chapter 5 - Calypso
 
 [Problem: Calypso's wine is sour.
 Solution: Bring Calypso bees from Thrinacia.]
@@ -155,7 +168,7 @@ Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "WRIT
 
 Test Calypso with "gonear calypso / gonear lampetia / follow bees / take beehive / gonear calypso / give calypso beehive".
 
-Chapter 5 - Nausikaa
+Chapter 6 - Nausikaa
 
 Nausikaa is a witch. The dialogue table of Nausikaa is the Table of Nausikaa's responses.
 
@@ -173,7 +186,7 @@ topic	reply
 To say learn about water:
 	now Nausikaa knows "water";
 
-Chapter 6 - Penelope
+Chapter 7 - Penelope
 
 Penelope is a witch. The dialogue table of Penelope is the Table of Penelope's responses.
 
@@ -223,12 +236,18 @@ Andromache is a witch. Andromache is in Troy.
 [Problem: Andromache must burn Astyanax's body.
 Solution: Bring Andromache a rosemary branch from Aeaea.]
 
+A piece of driftwood is a branch. A piece of driftwood is in Troy.
+
+Instead of burning the piece of driftwood:
+	if the location is Troy:
+		now the driftwood is lit;
+		say "You turn the driftwood into a makeshift torch.";
+	otherwise:
+		say "You can't see any fire to light that from.".
+
 Chapter 3 - Djerba
 
-[THERE IS LITERALLY NO SOURCE THAT NAMES THE LOTOS-EATERS AS INDIVIDUALS WHAT THE FUCK.]
-
-[Problem: Djerba's fire has gone out.
-Solution: Bring fire from Troy.]
+Nameless is in Djerba.
 
 Chapter 4 - Aeaea
 
@@ -310,6 +329,8 @@ To decide whether (item - a thing) interests (character - a person):
 	if the character is Kirke and the item is the waterskin:
 		allow Kirke to be picky;
 		no;
+	if the character is Nameless and the item is the piece of driftwood and the item is lit, yes;
+	if the character is Nameless and the item is the piece of driftwood and the item is unlit, no;
 	if the character needs the item, yes;
 	no.
 
@@ -340,6 +361,12 @@ Carry out filling:
 	now the noun is full;
 	now the noun is brought from location.
 
-Report filling: say "You fill the waterskin from the springs of [location].".
+Report filling:
+	if location is the Open Ocean:
+		say "You fill the waterskin with brine.";
+	otherwise:
+		say "You fill the waterskin from the springs of [location].".
 
 Following is an action applying to one visible thing. Understand "follow [something]" as following.
+
+Understand "scrounge for [something]" as taking. Understand "scrounge [something]" as taking.
