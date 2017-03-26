@@ -30,6 +30,8 @@ Chapter 2 - Layout
 
 An island can be free-floating or stabilized. An island is usually free-floating.
 
+The last stable island is an island which varies. The last heading is a direction that varies.
+
 Before going a direction (called way):
 	let Elsewhere be the list of free-floating islands;
 	if the location is an island:
@@ -39,16 +41,19 @@ Before going a direction (called way):
 	add the Underworld to Elsewhere;
 	add Elsewhere to Elsewhere;
 	add Elsewhere to Elsewhere;
-	add Ithaka to Elsewhere;
+	add Ithaka to Elsewhere;	
 	sort Elsewhere in random order;
 	let next be entry 1 of Elsewhere;
 	change the way exit of the location to next;
-	let reverse be the opposite of way;
-	change the reverse exit of next to the location.
+	now the last heading is way;
 
 To stabilize (i - an island):
 	say "The ground rumbles and the breeze stills.";
-	now i is stabilized.
+	now i is stabilized;
+	unless the last stable island is nothing:
+		let backwards be the reverse of last heading;
+		now the last stable island is mapped backwards of i;
+	now the last stable island is i.	
 
 Book 2 - the Witches
 
