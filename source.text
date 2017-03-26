@@ -14,17 +14,17 @@ Djerba is an island. "Lizards dangle from boughs of trees. A woman is wearing a 
 
 Aeaea is an island. "Rosemary bushes as tall as a man. The air is full of scarlet and onyx bees, twice as big as they should be. A dozen ivory dice are lying in a bed of dark-green moss. Blindfolded herms flank a path from the shore into a grove of pine trees. There is a small stone house with yellow smoke emerging. Wolves, lions, and deer wander the island."
 
-Thrinacia is an island. "Cows wander the island. A man is drinking pale yellow juice from a golden cup."
+Thrinacia is an island. "Cows wander the island, their horns curving fantastically. A man is drinking pale yellow juice from a golden cup."
 
 Ogygia is an island. "Apple trees are growing with white blossoms and blood-red fruit at the same time. Cypress trees reach to the sky. Birds, eerily silent, are flapping their wings; there are no bird’s-nests, but fallen feathers carpet the ground. Calypso’s hair is made of feathers."
 
-Scheria is an island. "A rhyton in the shape of a dog’s head holds barley beer. Large white fabric sheets flutter in the breeze."
+Scheria is an island. "A rhyton in the shape of a dog’s head holds barley beer. Large white fabric sheets flutter in the breeze. Boys wrestle in an arena, bright-eyed and laughing."
 
 Ithaka is an island. "The hills are made of pale cream and purple-gray stone. A woman is carrying a bronze-and-gold bowl with lead loom-weights in it. A woman is carrying a basket full of unwashed wool. A goat with yellow eyes follows you."
 
-The Open Ocean is a room. "The water is dark. A raft is floating on the ocean. A bird is sitting on the raft. Seaweed is drying on the raft."
+The Open Ocean is a room. "The water is dark, the color of unwatered wine. A raft is floating on the ocean. A bird is sitting on the raft. Seaweed is drying on the raft. The wind is coming from the north and smells of snow."
 
-The Underworld is a room. "The air smells of lilies and blood. It is always just past sunset."
+The Underworld is a room. "The air smells of lilies and blood. It is always just past sunset. There is a three-headed dog, spotted like a hyena, lying nearby. A iron double axe-head with dried blood on its blade is sticking out of the rocky ground."
 
 Chapter 2 - Layout
 
@@ -75,7 +75,7 @@ annoyed	"'You again?' Persephone says. She rolls her eyes. You feel embarrassed.
 exasperated	"'Don\'t you have anywhere else to be?' Persephone asks. She holds up a hand before you can answer. You close your mouth abruptly."
 vexed	"'Please start being interesting.' Persphone says. It is not a suggestion. You look at the floor."
 irked	"'What do you think would be a fitting punishment for an uninvited guest,'' Persephone asks. You swallow hard."
-irate	"Persephone leans back in her bone throne. 'You are not welcome here,' she says. The three-headed dog, spotted like a hyena, lying next to her, raises its head."
+irate	"Persephone leans back in her bone throne. 'You are no longer welcome here,' she says. The three-headed dog, spotted like a hyena, lying next to her, raises its head."
 furious	"Persephone shrieks, wordless and inhuman, like a fox crying. You curl into a ball around your knees."
 
 Chapter 2 - Andromache
@@ -83,7 +83,7 @@ Chapter 2 - Andromache
 [Problem: Andromache must burn Astyanax's body.
 Solution: Bring Andromache a rosemary branch from Aeaea.]
 
-Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "WRITEME".
+Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry.".
 
 Test Andromache with "gonear andromache / gonear kirke / take rosemary branch / gonear andromache / give andromache rosemary branch".
 
@@ -92,7 +92,7 @@ Chapter 3 - Adah
 [Problem: Djerba's fire has gone out.
 Solution: Bring fire from Troy.]
 
-Adah is a witch. Adah needs a piece of driftwood. Adah has the solution text "WRITEME".
+Adah is a witch. Adah needs a piece of driftwood. Adah has the solution text "Adah smiles dreamily and touches your cheek. 'Thank you, and may you reach your destination, O wanderer.'".
 
 Test Adah with "gonear Adah / gonear andromache / take driftwood / gonear Adah / give Adah driftwood / light driftwood / gonear andromache / light driftwood / gonear Adah / give Adah driftwood".
 
@@ -101,7 +101,7 @@ Chapter 4 - Kirke
 [Problem: Kirke's moly is malfunctioning and she can't choose what animal she turns visitors into.
 Solution: Bring Kirke fresh water from Scheria.]
 
-Kirke is a witch. Kirke needs a full waterskin brought from Scheria. Kirke has the solution text "WRITEME". Kirke lives on Aeaea. The dialogue table of Kirke is the Table of Kirke's responses.
+Kirke is a witch. Kirke needs a full waterskin brought from Scheria. Kirke has the solution text "She pours the water into the simmering pot suspended over the hearth. The smoke changes color from yellow to white, like new-born lambs when they open their eyes and discover the brightness of the world. She laughs.". Kirke lives on Aeaea. The dialogue table of Kirke is the Table of Kirke's responses.
 
 Table of Kirke's responses
 topic	reply
@@ -173,7 +173,7 @@ Chapter 6 - Calypso
 [Problem: Calypso's wine is sour.
 Solution: Bring Calypso bees from Thrinacia.]
 
-Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "WRITEME". Calypso lives on Ogygia.
+Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "Calypso claps her hands together. The bees begin to hum more loudly, and she laughs, before tying her feather-hair back with a scrap of linen. 'You are welcome, cousins,' she says, and the bees begin to swarm around her head.". Calypso lives on Ogygia.
 
 Test Calypso with "gonear calypso / gonear lampetia / follow bees / take beehive / gonear calypso / give calypso beehive".
 
@@ -194,8 +194,8 @@ Instead of following Nausikaa:
 
 Table of Nausikaa's responses
 topic	reply
-"dogs"	"Nausikaa can't hide her smile."
-"water"	"This is where I go swimming with my sisters.[learn about water]"
+"dogs"	"Nausikaa can't hide her smile. 'My father breeds the best hounds. This is Eurymedusa, I named her when I was little, after my nurse from Aperaea, and this is Charis, my brother's favorite, she can track a bird through the air, and just see how pretty she is, all dappled like shadows.'"
+"water"	"This is where I go swimming with my sisters, and where we wash our best clothes. It's a good place for ball games while the laundry dries.[learn about water]"
 
 To say learn about water:
 	now Nausikaa knows "water";
@@ -211,7 +211,7 @@ topic	reply
 "silence/nothing"	"[win game]"
 
 Before speech in the presence of Penelope for the first time:
-	say "You greet your wife. She grimaces. 'Do not speak and you say my name. If you need to speak, you will say my name.'";
+	say "You greet your wife. She turns her head away. 'Do not speak and you say my name. If you need to speak, you will say my name.'";
 	stop the action.	
 
 To say Penelope's riddle:
@@ -393,5 +393,5 @@ Check petting:
 
 Carry out petting:
 	now Nausikaa is trusting;
-	say "You gently scratch behind their ears.[paragraph break]";
+	say "You gently scratch behind their ears. The dogs yelp happily and press closer, nosing at you.[paragraph break]";
 	solve the problem of Nausikaa.
