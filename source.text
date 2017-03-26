@@ -10,17 +10,31 @@ An island is a kind of room.
 
 Troy is an island. "The wreck of a once-mighty city. A hill by a river mouth. Double defensive walls ring the city, covered in scorch marks and badly damaged. There are bodies piled against the walls. Bronze arrowheads and broken spear-shafts litter the ground. Fires smoulder in the streets."
 
+Troy is above the Underworld. Troy is west of Djerba. Troy is northeast of Aeaea. Troy is southwest of Thrinacia. Troy is north of Ogygia. Troy is south of Scheria. Troy is east of Ithaka.
+
 Djerba is an island. "Lizards dangle from boughs of trees. A woman is wearing a white khiton. She is wearing gold and bronze pins in her hair."
+
+Djerba is northwest of Troy. Djerba is south of Aeaea. Djerba is southeast of Thrinacia. Djerba is west of Ogygia. Djerba is north of Scheria. Djerba is southwest of Ithaka.
 
 Aeaea is an island. "Rosemary bushes as tall as a man. The air is full of scarlet and onyx bees, twice as big as they should be. A dozen ivory dice are lying in a bed of dark-green moss. Blindfolded herms flank a path from the shore into a grove of pine trees. There is a small stone house with yellow smoke emerging. Wolves, lions, and deer wander the island."
 
+Aeaea is west of Troy. Aeaea is northeast of Djerba. Aeaea is north of Thrinacia. Aeaea is east of Ogygia. Aeaea is northwest of Scheria. Aeaea is southeast of Ithaka.
+
 Thrinacia is an island. "Cows wander the island, their horns curving fantastically. A man is drinking pale yellow juice from a golden cup."
+
+Thrinacia is north of Troy. Thrinacia is southwest of Djerba. Thrinacia is east of Aeaea. Thrinacia is northeast of Ogygia. Thrinacia is west of Scheria. Thrinacia is south of Ithaka.
 
 Ogygia is an island. "Apple trees are growing with white blossoms and blood-red fruit at the same time. Cypress trees reach to the sky. Birds, eerily silent, are flapping their wings; there are no bird’s-nests, but fallen feathers carpet the ground. Calypso’s hair is made of feathers."
 
+Ogygia is southeast of Troy. Ogygia is northwest of Djerba. Ogygia is west of Aeaea. Ogygia is east of Thrinacia. Ogygia is southwest of Scheria. Ogygia is north of Ithaka.
+
 Scheria is an island. "A rhyton in the shape of a dog’s head holds barley beer. Large white fabric sheets flutter in the breeze. Boys wrestle in an arena, bright-eyed and laughing."
 
+Scheria is east of Troy. Scheria is north of Djerba. Scheria is southeast of Aeaea. Scheria is northwest of Thrinacia. Scheria is south of Ogygia. Scheria is west of Ithaka.
+
 Ithaka is an island. "The hills are made of pale cream and purple-gray stone. A woman is carrying a bronze-and-gold bowl with lead loom-weights in it. A woman is carrying a basket full of unwashed wool. A goat with yellow eyes follows you."
+
+Ithaka is south of Troy. Ithaka is southeast of Djerba. Ithaka is southwest of Aeaea. Ithaka is northeast of Thrinacia. Ithaka is northwest of Ogygia. Ithaka is east of Scheria.
 
 The Open Ocean is a room. "The water is dark, the color of unwatered wine. A raft is floating on the ocean. A bird is sitting on the raft. Seaweed is drying on the raft. The wind is coming from the north and smells of snow."
 
@@ -30,11 +44,31 @@ Chapter 2 - Layout
 
 An island can be free-floating or stabilized. An island is usually free-floating.
 
-The last stable island is an island which varies. The last heading is a direction that varies.
+The last stable island is an object which varies. The last stable island is nothing. The last heading is a direction that varies.
 
-Before going a direction (called way):
+After printing the locale description of the Underworld:
+	say "You can escape upward.".
+
+After printing the locale description of a free-floating island:
+	say "You think Ithaka might be [one of]north[or]northeast[or]northwest[or]south[or]southwest[or]southeast[or]west[or]east[purely at random] of here, but you're not sure."
+
+After printing the locale description of a stabilized island:
+	let L be the list of stabilized islands;
+	remove location from L;
+	if L is empty:
+		say "Your instruments aren't spinning about randomly any more, but you don't know where anything else is.";
+	otherwise:
+		let D be a list of text;
+		repeat with i running through L:
+			add "[i] is [the best route from location to i] of here" to D;
+		say "You're pretty sure that: [D]. You could also try sailing in a new direction.".
+
+Instead of going from a free-floating island, sail boldly into the unknown.
+Instead of going to a free-floating island, sail boldly into the unknown.
+
+To sail boldly into the unknown:
 	let Elsewhere be the list of free-floating islands;
-	if the location is an island:
+	if the location is an island and the location is free-floating:
 		remove the location from Elsewhere;
 	if the location is not Ithaka:
 		remove Ithaka from Elsewhere;
@@ -44,16 +78,11 @@ Before going a direction (called way):
 	add Ithaka to Elsewhere;	
 	sort Elsewhere in random order;
 	let next be entry 1 of Elsewhere;
-	change the way exit of the location to next;
-	now the last heading is way;
+	move the player to next.
 
 To stabilize (i - an island):
-	say "The ground rumbles and the breeze stills.";
 	now i is stabilized;
-	unless the last stable island is nothing:
-		let backwards be the reverse of last heading;
-		now the last stable island is mapped backwards of i;
-	now the last stable island is i.	
+	say "The ground rumbles and the breeze stills.".
 
 Book 2 - the Witches
 
