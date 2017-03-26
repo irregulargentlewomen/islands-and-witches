@@ -50,12 +50,15 @@ To stabilize (i - an island):
 
 Book 2 - the Witches
 
-A witch is a kind of person. A witch has a table name called the dialogue table. A witch has some text called the solution text.
+A witch is a kind of woman. A witch has a table name called the dialogue table. A witch has some text called the solution text.
 
 Annoyance is a kind of value. The annoyances are calm, annoyed, exasperated, vexed, irked, irate, and furious.
 
 Needing relates one witch to one thing. The verb to need means the needing relation.
 Living on relates one witch to one island. The verb to live on means the living on relation.
+Knowing relates one witch to various topics. The verb to know means the knowing relation.
+
+The waterskin is a thing. The waterskin is in Hammerspace. The waterskin can be full or empty. The waterskin is full. Sourcing relates a thing to one room. The verb to be brought from means the sourcing relation. The waterskin is brought from Troy. The printed name of the waterskin is "waterskin ([if full]full of water from [the island to which the waterskin relates by the sourcing relation][otherwise]empty[end if])".
 
 Chapter 1 - Persephone
 
@@ -72,6 +75,44 @@ irate	"Persephone leans back in her bone throne. 'You are not welcome here,' she
 furious	"Persephone shrieks, wordless and inhuman, like a fox crying. You curl into a ball around your knees."
 
 Chapter 2 - Kirke
+
+[Problem: Kirke's moly is malfunctioning and she can't choose what animal she turns visitors into.
+Solution: Bring Kirke fresh water from Scheria.]
+
+Kirke is a witch. Kirke needs a full waterskin brought from Scheria. Kirke has the solution text "WRITEME". Kirke lives on Aeaea. The dialogue table of Kirke is the Table of Kirke's responses.
+
+Table of Kirke's responses
+topic	reply
+"moly"	"WRITEME [remember waterskin]"
+
+Test Kirke with "gonear kirke / ask kirke about moly / give kirke waterskin / gonear nausikaa / fill waterskin / follow nausikaa / ask nausikaa about water / follow nausikaa / fill waterskin / gonear kirke / give kirke waterskin"
+
+To say remember waterskin:
+	If the waterskin is in Hammerspace:
+		say "You ask one of your men to fetch a waterskin from the boat. He sprints there and back.";
+		move the waterskin to the player.
+
+To allow Kirke to be picky:
+	if the waterskin is empty:
+		say "She needs water, not an empty waterskin.";
+		stop the action;
+	if the waterskin is not brought from Scheria:
+		let s be the the island to which the waterskin relates by the sourcing relation;
+		choose the row with source of s from the Table of Kirke refusing water;
+		say "KIrke frowns. '[refusal entry]'[paragraph break]";
+		stop the action;
+	continue the action.
+
+Table of Kirke refusing water
+source	refusal
+Troy	"Dead water full of dead things."
+Djerba	"WRITEME"
+Aeaea	"WRITEME"
+Thrinacia	"WRITEME"
+Ogygia	"WRITEME"
+Ithaka	"WRITEME"
+Open Ocean	"WRITEME"
+Underworld	"WRITEME"
 
 Chapter 3 - Lampetia
 
@@ -107,11 +148,32 @@ Test Lampetia with "gonear Lampetia / ask Lampetia about cows / ask lampetia abo
 
 Chapter 4 - Calypso
 
+[Problem: Calypso's wine is sour.
+Solution: Bring Calypso bees from Thrinacia.]
+
 Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "WRITEME". Calypso lives on Ogygia.
 
 Test Calypso with "gonear calypso / gonear lampetia / follow bees / take beehive / gonear calypso / give calypso beehive".
 
-Chapter 5 - Penelope
+Chapter 5 - Nausikaa
+
+Nausikaa is a witch. The dialogue table of Nausikaa is the Table of Nausikaa's responses.
+
+Instead of following Nausikaa:
+	if Nausikaa knows "water":
+		now Scheria is watery;
+		say "She leads you to a clear spring.";
+	otherwise:
+		say "Nausikaa looks at you skeptically. You stop, to keep her trust.".
+
+Table of Nausikaa's responses
+topic	reply
+"water"	"WRITEME[learn about water]"
+
+To say learn about water:
+	now Nausikaa knows "water";
+
+Chapter 6 - Penelope
 
 Penelope is a witch. The dialogue table of Penelope is the Table of Penelope's responses.
 
@@ -136,6 +198,8 @@ To say win game:
 Test Penelope with "gonear penelope / answer penelope that lies / answer penelope silence".
  
 Book 3 - the Islands, and other Lands
+
+A room can be watery or arid. A room is usually watery.
 
 Chapter 1 - the Underworld
 
@@ -168,10 +232,7 @@ Solution: Bring fire from Troy.]
 
 Chapter 4 - Aeaea
 
-Kirke is a witch. Kirke is in Aeaea.
-
-[Problem: Kirke's moly is malfunctioning and she can't choose what animal she turns visitors into.
-Solution: Bring Kirke fresh water from Scheria.]
+Kirke is in Aeaea.
 
 Chapter 5 - Thrinacia
 
@@ -180,8 +241,6 @@ Lampetia is in Thrinacia.
 The swarm is a thing. Understand "bees" as the swarm. Understand "bee" as the swarm. The swarm is in Thrinacia. "You hear bees buzzing about." Instead of taking the swarm, say "A bee stings your leather glove and dies."
 
 The beehive is a thing. The beehive is in Hammerspace.
-
-Following is an action applying to one visible thing. Understand "follow [something]" as following.
 
 Instead of following the swarm:
 	if the beehive is in Hammerspace or the beehive is in Thrinacia:
@@ -196,7 +255,7 @@ Calypso is in Ogygia.
 
 Chapter 7 - Scheria
 
-Nausikaa is a witch. Nausikaa is in Scheria.
+Nausikaa is in Scheria. Scheria is arid.
 
 Chapter 8 - Ithaka
 
@@ -246,7 +305,11 @@ Report giving:
 After giving:
 	solve the problem of the second noun.
 
-To decide whether (item - a thing) interests (character - a person): 
+To decide whether (item - a thing) interests (character - a person):
+	if the character is Kirke and the item is the waterskin and the waterskin is full and the waterskin is brought from Scheria, yes;
+	if the character is Kirke and the item is the waterskin:
+		allow Kirke to be picky;
+		no;
 	if the character needs the item, yes;
 	no.
 
@@ -254,3 +317,29 @@ To solve the problem of (witch - a witch):
 	Say the solution text of the witch;
 	Stabilize the island to which the witch relates by the living on relation.
 	
+Chapter 3 - Actions
+
+Emptying is an action applying to one carried thing. Understand "empty [something preferably held]" as emptying.
+
+Check emptying:
+	unless the noun is the waterskin, say "You cannot empty [the noun]" instead;
+	unless the noun is full, say "It's already empty" instead.
+
+Carry out emptying: now the noun is empty. Report emptying: say "You dump water onto the sand.".
+
+Filling is an action applying to one carried thing. Understand "fill [something preferably held]" as filling.
+
+Before filling: if the noun is the waterskin and the noun is full, try emptying the waterskin.
+
+Check filling:	
+	unless the noun is the waterskin, say "You cannot fill [the noun]" instead;
+	unless the noun is empty, say "It's already full" instead;
+	unless the location is watery, say "You can't see any water from which to fill the waterskin." instead.
+
+Carry out filling:
+	now the noun is full;
+	now the noun is brought from location.
+
+Report filling: say "You fill the waterskin from the springs of [location].".
+
+Following is an action applying to one visible thing. Understand "follow [something]" as following.
