@@ -76,7 +76,16 @@ irked	"'What do you think would be a fitting punishment for an uninvited guest,'
 irate	"Persephone leans back in her bone throne. 'You are not welcome here,' she says. Your skin begins to soften and dissolve."
 furious	"Persephone shrieks, wordless and inhuman, like a fox crying. You curl into a ball around your knees."
 
-Chapter 2 - Nameless
+Chapter 2 - Andromache
+
+[Problem: Andromache must burn Astyanax's body.
+Solution: Bring Andromache a rosemary branch from Aeaea.]
+
+Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "WRITEME".
+
+Test Andromache with "gonear andromache / gonear kirke / take rosemary branch / gonear andromache / give andromache rosemary branch".
+
+Chapter 3 - Nameless
 
 [THERE IS LITERALLY NO SOURCE THAT NAMES THE LOTOS-EATERS AS INDIVIDUALS WHAT THE FUCK.]
 
@@ -87,7 +96,7 @@ Nameless is a witch. Nameless needs a piece of driftwood. Nameless has the solut
 
 Test Nameless with "gonear nameless / gonear andromache / take driftwood / gonear nameless / give nameless driftwood / light driftwood / gonear andromache / light driftwood / gonear nameless / give nameless driftwood".
 
-Chapter 3 - Kirke
+Chapter 4 - Kirke
 
 [Problem: Kirke's moly is malfunctioning and she can't choose what animal she turns visitors into.
 Solution: Bring Kirke fresh water from Scheria.]
@@ -127,7 +136,7 @@ Ithaka	"WRITEME"
 Open Ocean	"WRITEME"
 Underworld	"WRITEME"
 
-Chapter 4 - Lampetia
+Chapter 5 - Lampetia
 
 Lampetia is a witch. The dialogue table of Lampetia is the Table of Lampetia's responses.
 
@@ -159,7 +168,7 @@ To say stabilize Thrinacia:
 
 Test Lampetia with "gonear Lampetia / ask Lampetia about cows / ask lampetia about bees / answer lampetia night and day".
 
-Chapter 5 - Calypso
+Chapter 6 - Calypso
 
 [Problem: Calypso's wine is sour.
 Solution: Bring Calypso bees from Thrinacia.]
@@ -168,7 +177,7 @@ Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "WRIT
 
 Test Calypso with "gonear calypso / gonear lampetia / follow bees / take beehive / gonear calypso / give calypso beehive".
 
-Chapter 6 - Nausikaa
+Chapter 7 - Nausikaa
 
 Nausikaa is a witch. The dialogue table of Nausikaa is the Table of Nausikaa's responses.
 
@@ -186,7 +195,7 @@ topic	reply
 To say learn about water:
 	now Nausikaa knows "water";
 
-Chapter 7 - Penelope
+Chapter 8 - Penelope
 
 Penelope is a witch. The dialogue table of Penelope is the Table of Penelope's responses.
 
@@ -231,10 +240,7 @@ To increase Persephone's annoyance:
 			
 Chapter 2 - Troy
 
-Andromache is a witch. Andromache is in Troy.
-
-[Problem: Andromache must burn Astyanax's body.
-Solution: Bring Andromache a rosemary branch from Aeaea.]
+Andromache is in Troy.
 
 A piece of driftwood is a branch. A piece of driftwood is in Troy.
 
@@ -252,6 +258,8 @@ Nameless is in Djerba.
 Chapter 4 - Aeaea
 
 Kirke is in Aeaea.
+
+The rosemary branch is a thing. The rosemary branch is in Aeaea.
 
 Chapter 5 - Thrinacia
 
