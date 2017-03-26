@@ -10,31 +10,17 @@ An island is a kind of room.
 
 Troy is an island. "The wreck of a once-mighty city. A hill by a river mouth. Double defensive walls ring the city, covered in scorch marks and badly damaged. There are bodies piled against the walls. Bronze arrowheads and broken spear-shafts litter the ground. Fires smoulder in the streets."
 
-Troy is above the Underworld. Troy is west of Djerba. Troy is northeast of Aeaea. Troy is southwest of Thrinacia. Troy is north of Ogygia. Troy is south of Scheria. Troy is east of Ithaka.
-
 Djerba is an island. "Lizards dangle from boughs of trees. A woman is wearing a white khiton. She is wearing gold and bronze pins in her hair."
-
-Djerba is northwest of Troy. Djerba is south of Aeaea. Djerba is southeast of Thrinacia. Djerba is west of Ogygia. Djerba is north of Scheria. Djerba is southwest of Ithaka.
 
 Aeaea is an island. "Rosemary bushes as tall as a man. The air is full of scarlet and onyx bees, twice as big as they should be. A dozen ivory dice are lying in a bed of dark-green moss. Blindfolded herms flank a path from the shore into a grove of pine trees. There is a small stone house with yellow smoke emerging. Wolves, lions, and deer wander the island."
 
-Aeaea is west of Troy. Aeaea is northeast of Djerba. Aeaea is north of Thrinacia. Aeaea is east of Ogygia. Aeaea is northwest of Scheria. Aeaea is southeast of Ithaka.
-
 Thrinacia is an island. "Cows wander the island, their horns curving fantastically. A man is drinking pale yellow juice from a golden cup."
-
-Thrinacia is north of Troy. Thrinacia is southwest of Djerba. Thrinacia is east of Aeaea. Thrinacia is northeast of Ogygia. Thrinacia is west of Scheria. Thrinacia is south of Ithaka.
 
 Ogygia is an island. "Apple trees are growing with white blossoms and blood-red fruit at the same time. Cypress trees reach to the sky. Birds, eerily silent, are flapping their wings; there are no bird’s-nests, but fallen feathers carpet the ground. Calypso’s hair is made of feathers."
 
-Ogygia is southeast of Troy. Ogygia is northwest of Djerba. Ogygia is west of Aeaea. Ogygia is east of Thrinacia. Ogygia is southwest of Scheria. Ogygia is north of Ithaka.
-
 Scheria is an island. "A rhyton in the shape of a dog’s head holds barley beer. Large white fabric sheets flutter in the breeze. Boys wrestle in an arena, bright-eyed and laughing."
 
-Scheria is east of Troy. Scheria is north of Djerba. Scheria is southeast of Aeaea. Scheria is northwest of Thrinacia. Scheria is south of Ogygia. Scheria is west of Ithaka.
-
 Ithaka is an island. "The hills are made of pale cream and purple-gray stone. A woman is carrying a bronze-and-gold bowl with lead loom-weights in it. A woman is carrying a basket full of unwashed wool. A goat with yellow eyes follows you."
-
-Ithaka is south of Troy. Ithaka is southeast of Djerba. Ithaka is southwest of Aeaea. Ithaka is northeast of Thrinacia. Ithaka is northwest of Ogygia. Ithaka is east of Scheria.
 
 The Open Ocean is a room. "The water is dark, the color of unwatered wine. A raft is floating on the ocean. A bird is sitting on the raft. Seaweed is drying on the raft. The wind is coming from the north and smells of snow."
 
@@ -42,29 +28,23 @@ The Underworld is a room. "The air smells of lilies and blood. It is always just
 
 Chapter 2 - Layout
 
-An island can be free-floating or stabilized. An island is usually free-floating.
+Troy is above the Underworld. Troy is west of Djerba. Troy is northeast of Aeaea. Troy is southwest of Thrinacia. Troy is north of Ogygia. Troy is south of Scheria. Troy is east of Ithaka. Scheria is west of Thrinacia. Scheria is northeast of Ithaka. Scheria is northwest of Djerba. Thrinacia is north of Djerba. Djerba is northeast of Ogygia. Ogygia is east of Aeaea. Ogygia is southeast of Ithaka. Aeaea is west of Ogygia. Aeaea is south of Ithaka.
 
-The last stable island is an object which varies. The last stable island is nothing. The last heading is a direction that varies.
+An island can be free-floating or stabilized. An island is usually free-floating.
 
 After printing the locale description of the Underworld:
 	say "You can escape upward.".
 
 After printing the locale description of a free-floating island:
-	say "You think Ithaka might be [one of]north[or]northeast[or]northwest[or]south[or]southwest[or]southeast[or]west[or]east[purely at random] of here, but you're not sure."
+	unless the location is Ithaka, say confusing directions.
 
-After printing the locale description of a stabilized island:
-	let L be the list of stabilized islands;
-	remove location from L;
-	if L is empty:
-		say "Your instruments aren't spinning about randomly any more, but you don't know where anything else is.";
-	otherwise:
-		let D be a list of text;
-		repeat with i running through L:
-			add "[i] is [the best route from location to i] of here" to D;
-		say "You're pretty sure that: [D]. You could also try sailing in a new direction.".
+After printing the locale description of a stabilized island, say understandable directions.
 
 Instead of going from a free-floating island, sail boldly into the unknown.
+Instead of going nowhere from a free-floating island, sail boldly into the unknown.
 Instead of going to a free-floating island, sail boldly into the unknown.
+Instead of going nowhere from the Open Ocean, sail boldly into the unknown.
+Instead of going nowhere from a stabilized island, move the player to the Open Ocean.
 
 To sail boldly into the unknown:
 	let Elsewhere be the list of free-floating islands;
@@ -73,16 +53,34 @@ To sail boldly into the unknown:
 	if the location is not Ithaka:
 		remove Ithaka from Elsewhere;
 	add the Underworld to Elsewhere;
+	add the Open Ocean to Elsewhere;
 	add Elsewhere to Elsewhere;
 	add Elsewhere to Elsewhere;
-	add Ithaka to Elsewhere;	
+	add Elsewhere to Elsewhere;
+	[you become more and more likely to find ithaka as you solve puzzles]
+	repeat with unused running through the list of stabilized islands:
+		add Ithaka to Elsewhere;
 	sort Elsewhere in random order;
 	let next be entry 1 of Elsewhere;
 	move the player to next.
 
 To stabilize (i - an island):
 	now i is stabilized;
-	say "The ground rumbles and the breeze stills.".
+	say "The ground rumbles and the breeze stills.[paragraph break][understandable directions]".
+	
+To say confusing directions:
+	say "You think Ithaka might be [one of]north[or]northeast[or]northwest[or]south[or]southwest[or]southeast[or]west[or]east[purely at random] of here, but you're not sure."
+
+To say understandable directions:
+	let L be the list of stabilized islands;
+	remove location from L;
+	if L is empty:
+		say "Your instruments aren't spinning about randomly any more, but you don't know where anything else is.";
+	otherwise:
+		let D be a list of text;
+		repeat with i running through L:
+			add "[i] is to [the best route from location to i]" to D;
+		say "You're sure that [D]. You could also try sailing in a new direction.".
 
 Book 2 - the Witches
 
@@ -117,7 +115,7 @@ Chapter 2 - Andromache
 [Problem: Andromache must burn Astyanax's body.
 Solution: Bring Andromache a rosemary branch from Aeaea.]
 
-Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry.".
+Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry.". Andromache lives on Troy.
 
 Test Andromache with "gonear andromache / gonear kirke / take rosemary branch / gonear andromache / give andromache rosemary branch".
 
@@ -126,7 +124,7 @@ Chapter 3 - Adah
 [Problem: Djerba's fire has gone out.
 Solution: Bring fire from Troy.]
 
-Adah is a witch. Adah needs a piece of driftwood. Adah has the solution text "Adah smiles dreamily and touches your cheek. 'Thank you, and may you reach your destination, O wanderer.'".
+Adah is a witch. Adah needs a piece of driftwood. Adah has the solution text "Adah smiles dreamily and touches your cheek. 'Thank you, and may you reach your destination, O wanderer.'". Adah lives on Djerba.
 
 Test Adah with "gonear Adah / gonear andromache / take driftwood / gonear Adah / give Adah driftwood / light driftwood / gonear andromache / light driftwood / gonear Adah / give Adah driftwood".
 
@@ -175,7 +173,7 @@ Underworld	"The queen of the dead does not heal."
 
 Chapter 5 - Lampetia
 
-Lampetia is a witch. The dialogue table of Lampetia is the Table of Lampetia's responses.
+Lampetia is a witch. The dialogue table of Lampetia is the Table of Lampetia's responses. Lampetia lives on Thrinacia.
 
 Table of Lampetia's responses
 topic	reply
@@ -216,7 +214,7 @@ Test Calypso with "gonear calypso / gonear lampetia / follow bees / take beehive
 
 Chapter 7 - Nausikaa
 
-Nausikaa is a witch. The dialogue table of Nausikaa is the Table of Nausikaa's responses. Nausikaa can be trusting or skeptical. Nausikaa is skeptical. The solution text of Nausikaa is "The wariness fades from Nausikaa's expression. ".
+Nausikaa is a witch. The dialogue table of Nausikaa is the Table of Nausikaa's responses. Nausikaa can be trusting or skeptical. Nausikaa is skeptical. The solution text of Nausikaa is "The wariness fades from Nausikaa's expression. ". Nausikaa lives on Scheria.
 
 Before speech in the presence of Nausikaa:
 	Unless Nausikaa is trusting or the topic understood includes "dogs":
@@ -309,7 +307,7 @@ Chapter 5 - Thrinacia
 
 Lampetia is in Thrinacia.
 
-The swarm is a thing. Understand "bees" as the swarm. Understand "bee" as the swarm. The swarm is in Thrinacia. "You hear bees buzzing about." Instead of taking the swarm, say "A bee stings your leather glove and dies."
+The swarm is a thing. Understand "bees" as the swarm. Understand "bee" as the swarm. The swarm is in Thrinacia. "You hear bees buzzing about." Instead of taking the swarm, say "A bee stings your leather glove and dies." Instead of examining the swarm, try following the swarm.
 
 The beehive is a thing. The beehive is in Hammerspace.
 
@@ -326,7 +324,11 @@ Calypso is in Ogygia.
 
 Chapter 7 - Scheria
 
-Nausikaa is in Scheria. Scheria is arid.
+Nausikaa is in Scheria. "[if Nausikaa is skeptical]Nausikaa is here. You met her once, even younger than now, at a banquet. Perhaps she doesn't recognize you. Perhaps you made a bad impression, then.[otherwise]Nausikaa is sitting, cross-legged and indolent.[end if]"
+
+The dogs are a thing. The dogs are in Scheria. "Fawn-colored sighthounds lie in the shade." Understand "dog" as dogs. Understand "sighthounds" as dogs. Understand "sighthound" as dogs. Understand "Eurymedusa" as dogs. Understand "Charis" as dogs. Instead of examining the dogs, try asking Nausikaa about "dogs".
+
+Scheria is arid.
 
 The rhyton is scenery in Scheria. The description of the rhyton is "Horn, barely yellowed, barely translucent. The dog's eyes are dark-colored from the beer behind them."
 
@@ -336,11 +338,9 @@ The fabric is scenery in Scheria. The description of fabric is "Newly laundered 
 
 The boys are scenery in Scheria. The description of boys is "Not old enough for war, yet, and therefore still lucky." 
 
-The dogs are a thing. The dogs are in Scheria. "Fawn-colored sighthounds lie in the shade." Understand "dog" as dogs. Understand "sighthounds" as dogs. Understand "sighthound" as dogs. Understand "Eurymedusa" as dogs. Understand "Charis" as dogs. Instead of examining the dogs, try asking Nausikaa about "dogs".
-
 Chapter 8 - Ithaka
 
-Penelope is in Ithaka.
+Penelope is in Ithaka. "Penelope is among her women, drab in widow's weeds."
 
 Book 4 - Interactions
 
@@ -448,6 +448,7 @@ Check petting:
 	unless the noun is dogs, say "That doesn't seem like a good idea." instead.
 
 Carry out petting:
-	now Nausikaa is trusting;
 	say "You gently scratch behind their ears. The dogs yelp happily and press closer, nosing at you.[paragraph break]";
-	solve the problem of Nausikaa.
+	if Nausikaa is skeptical:
+		now Nausikaa is trusting;
+		solve the problem of Nausikaa.
