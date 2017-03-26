@@ -141,6 +141,8 @@ Table of Kirke's responses
 topic	reply
 "moly/drugs/potion"	"Kirke sniffs. 'My art is as it ever was. My spring has gone sour.'[paragraph break][remember waterskin]"
 "deer"	"'Too tall,' Kirke says. 'Spindly-legged. I worry that they'll trip over logs and die immobile in the forest.'"
+"pigs"	"Kirke raises an eyebrow. 'What pigs, wanderer? Or are you offering an opinion?'[paragraph break]You back down hurriedly from her threat."
+"bears"	"'Gluttons. Always stealing my sister-witches' honey.'"
 
 Test Kirke with "gonear kirke / ask kirke about moly / give kirke waterskin / gonear nausikaa / fill waterskin / follow nausikaa / ask nausikaa about water / follow nausikaa / fill waterskin / gonear kirke / give kirke waterskin"
 
@@ -324,7 +326,17 @@ Calypso is in Ogygia.
 
 Chapter 7 - Scheria
 
-Nausikaa is in Scheria. Scheria is arid. The dogs are a thing. The dogs are in Scheria. "Fawn-colored sighthounds lie in the shade."
+Nausikaa is in Scheria. Scheria is arid.
+
+The rhyton is scenery in Scheria. The description of the rhyton is "Horn, barely yellowed, barely translucent. The dog's eyes are dark-colored from the beer behind them."
+
+Beer is scenery in Scheria. The description of beer is "Fresh, from the smell of it." Instead of drinking the beer, say "You'd rather not presume on Nausikaa's hospitality. Her parents would know." Instead of taking the beer, try drinking the beer.
+
+The fabric is scenery in Scheria. The description of fabric is "Newly laundered and half-dry."
+
+The boys are scenery in Scheria. The description of boys is "Not old enough for war, yet, and therefore still lucky." 
+
+The dogs are a thing. The dogs are in Scheria. "Fawn-colored sighthounds lie in the shade." Understand "dog" as dogs. Understand "sighthounds" as dogs. Understand "sighthound" as dogs. Understand "Eurymedusa" as dogs. Understand "Charis" as dogs. Instead of examining the dogs, try asking Nausikaa about "dogs".
 
 Chapter 8 - Ithaka
 
