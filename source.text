@@ -8,19 +8,19 @@ Chapter 1 - Naming Islands & Other Lands
 
 An island is a kind of room.
 
-Troy is an island. "The wreck of a once-mighty city. A hill by a river mouth. Double defensive walls ring the city, covered in scorch marks and badly damaged. There are bodies piled against the walls. Bronze arrowheads and broken spear-shafts litter the ground. Fires smoulder in the streets."
+Troy is an island. "The wreck of a once-mighty city. The remains of the city are on a hill by the mouth of the river Scamander. Double defensive walls ring the city, covered in scorch marks and badly damaged. There are bodies piled against the walls. Bronze arrowheads and broken spear-shafts litter the ground. Fires smoulder in the streets."
 
-Djerba is an island. "Lizards dangle from boughs of trees."
+Djerba is an island. "Lizards dangle from boughs of trees. There are people sprawled on the ground, as though they have been felled by a blow, but there are no traces of a battle, and no one is wounded. Something is missing here, perhaps someone, but no one is mourning. No one pays attention to you as you walk toward a shrine wth a cold brazier and a heap of clay offering-figures."
 
-Aeaea is an island. "Rosemary bushes as tall as a man. The air is full of scarlet and onyx bees, twice as big as they should be. A dozen ivory dice are lying in a bed of dark-green moss. Blindfolded herms flank a path from the shore into a grove of pine trees. There is a small stone house with yellow smoke emerging. Wolves, lions, and deer wander the island."
+Aeaea is an island. "Rosemary bushes as tall as a man. The air is full of scarlet and onyx bees, twice as big as they should be. A dozen ivory dice are lying in a bed of dark-green moss. Blindfolded herms flank a path from the shore into a grove of pine trees. There is a small stone house with yellow smoke emerging. Wolves, lions, and deer wander the island, nudging each other companiably. When they notice you, they go still."
 
-Thrinacia is an island. "Cows wander the island, their horns curving fantastically. A man is drinking pale yellow juice from a golden cup."
+Thrinacia is an island. "Cows wander the island, their horns curving fantastically. A man is drinking pale yellow juice from a golden cup. He looks at you, turns his cup over, and pours his drink on the ground. Bees fill the air and stream toward a gap in the trees." 
 
 Ogygia is an island. "Apple trees are growing with white blossoms and blood-red fruit at the same time. Cypress trees reach to the sky. Birds, eerily silent, are flapping their wings; there are no bird’s-nests, but fallen feathers carpet the ground. Calypso’s hair is made of feathers."
 
-Scheria is an island. "A rhyton in the shape of a dog’s head holds barley beer. Large white fabric sheets flutter in the breeze. Boys wrestle in an arena, bright-eyed and laughing."
+Scheria is an island. "A small table is laden with rhytons full of barley beer. A barbarian's drink, but you would not reject it after your journey. White fabric is draped over bushes. Nearby, boys wrestle and throw javelins at a practice target, bright-eyed and laughing."
 
-Ithaka is an island. "The hills are made of pale cream and purple-gray stone. A woman is carrying a bronze-and-gold bowl with lead loom-weights in it. A woman is carrying a basket full of unwashed wool. A goat with yellow eyes follows you."
+Ithaka is an island. "The hills are made of pale cream and purple-gray stone. A woman is carrying a bronze-and-gold bowl with lead loom-weights in it. A woman is carrying a basket full of unwashed wool, greasy and full of grassy debris. A goat with yellow eyes follows you."
 
 The Open Ocean is a room. "The water is dark, the color of unwatered wine. A raft is floating on the ocean. A bird is sitting on the raft. Seaweed is drying on the raft. The wind is coming from the north and smells of snow."
 
@@ -76,7 +76,7 @@ To say understandable directions:
 	let L be the list of stabilized islands;
 	remove location from L;
 	if L is empty:
-		say "Your instruments aren't spinning about randomly any more, but you don't know where anything else is.";
+		say "The stars overhead are familiar once again, but you don't know where anything else is.";
 	otherwise:
 		let D be a list of text;
 		repeat with i running through L:
@@ -108,7 +108,7 @@ annoyed	"'You again?' Persephone says. She rolls her eyes. You feel embarrassed.
 exasperated	"'Don\'t you have anywhere else to be?' Persephone asks. She holds up a hand before you can answer. You close your mouth abruptly."
 vexed	"'Please start being interesting.' Persphone says. It is not a suggestion. You look at the floor."
 irked	"'What do you think would be a fitting punishment for an uninvited guest,'' Persephone asks. You swallow hard."
-irate	"Persephone leans back in her bone throne. 'You are no longer welcome here,' she says. The three-headed dog, spotted like a hyena, lying next to her, raises its head."
+irate	"Persephone leans back in her throne, carved from wood as dark as sleep and bone as pale as milk. 'You are no longer welcome here,' she says. The three-headed dog lying next to her raises its head."
 furious	"Persephone shrieks, wordless and inhuman, like a fox crying. You curl into a ball around your knees."
 
 Chapter 2 - Andromache
@@ -116,14 +116,14 @@ Chapter 2 - Andromache
 [Problem: Andromache must burn Astyanax's body.
 Solution: Bring Andromache a rosemary branch from Aeaea.]
 
-Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry.". Andromache lives on Troy. The dialogue table of Andromache is the Table of Andromache's responses.
+Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry. It is time for you to be on your way, and leave Andromache to her grief, and her captivity. She was a princess of Troy, and beloved, and powerful, and now she is a slave.". Andromache lives on Troy. The dialogue table of Andromache is the Table of Andromache's responses.
 
 Table of Andromache's responses
 topic	reply
-"herself"	"She nearly spits. 'You've got nerve. You might as well ask after my son, or how I felt as the battle raged.'"
-"son/Astynax"	"'He lies unhallowed, and will continue so until I can burn him with proper ceremony.'"
-"battle/Troy"	"The shriek of arrows above our heads. Our food slowly dwindling. Siege is an ugly warfare."
-"Hector/Hektor/husband"	"'Braver than any of you.'"
+"herself"	"She nearly spits. 'You've got nerve. You might as well ask after my son, or how I felt as I watched my husband fall in battle and be dishonored by dust.'"
+"son/Astynax"	"'He lies unhallowed, and will remain so until I can burn him with proper ceremony.'"
+"battle/Troy"	"Arrows shrieking overhead, the weapon of cowards who will only fight from a distance. There is no manhood in that, and yet what can I care for manhood now that my husband is gone and my son as bloody as the day I bore him. Siege is an ugly warfare."
+"Hector/Hektor/husband"	"'Keep his name out of your mouth. He was braver than any Achaean, and I will go to my grave knowing it.'"
 
 Test Andromache with "gonear andromache / gonear kirke / take rosemary branch / gonear andromache / give andromache rosemary branch".
 
@@ -132,13 +132,15 @@ Chapter 3 - Adah
 [Problem: Djerba's fire has gone out.
 Solution: Bring fire from Troy.]
 
-Adah is a witch. Adah needs a piece of driftwood. Adah has the solution text "Adah smiles dreamily and touches your cheek. 'Thank you, and may you reach your destination, O wanderer.'". Adah lives on Djerba. The dialogue table of Adah is the Table of Adah's responses.
+Adah is a witch. Adah needs a piece of driftwood. Adah has the solution text "Adah smiles dreamily and touches your cheek. 'Thank you, and may you reach your destination, O wanderer.' You back away, unnerved by these languid, indifferent folk.". Adah lives on Djerba. The dialogue table of Adah is the Table of Adah's responses.
 
 Table of Adah's responses
 topic	reply
 "lotos/lotus"	"Adah smiles dreamily."
 "name"	"'Adah,' she murmurs."
 "fire/brazier"	"Adah gestures to the unlit brazier. [description of the brazier]"
+
+[@bhaibel, I'm not sure if you need text for a description of the brazier, but jic: It is three-legged, made out of bronze with etched and painted geometric patterns on the outside. You can see the figure of a horse emerging from the shapes, its proud head lifted as it stretches itself to run.]
 
 Test Adah with "gonear Adah / gonear andromache / take driftwood / gonear Adah / give Adah driftwood / light driftwood / gonear andromache / light driftwood / gonear Adah / give Adah driftwood".
 
@@ -194,7 +196,7 @@ Lampetia is a witch. The dialogue table of Lampetia is the Table of Lampetia's r
 
 Table of Lampetia's responses
 topic	reply
-"cows"	"My father's, but do not harm them."
+"cows"	"My father's, but do not harm them. The last man who spilled their blood still flees the Kindly Ones."
 "bees"	"[one of]Few too many of them if you ask me.[or]My father doesn't care one whit for them, and neither do I.[at random]"
 "night and day"	"Lampetia nods.[paragraph break][stabilize Thrinacia]"
 
@@ -273,7 +275,7 @@ Report answering Penelope that something:
 	stop the action.
 
 To say win game:
-	end the story saying "Penelope has recognized you. Your journey home has ended." instead.
+	end the story saying "Penelope has recognized you. Your journey home has ended. The suitors must still be dealt with, and your father mourns your in the orchard you planted with him long ago, but for now, you can rest; tomorrow is time enough to seek glory. This island knows you now, and you are home." instead.
 
 Test Penelope with "gonear penelope / answer penelope that lies / answer penelope silence".
  
@@ -283,7 +285,7 @@ A room can be watery or arid. A room is usually watery.
 
 Chapter 1 - the Underworld
 
-Persephone is in the Underworld. "[if the Underworld is unvisited]Persephone's biding her time here until spring.[otherwise]Persephone is still here.[end if] [entrance line]"
+Persephone is in the Underworld. "[if the Underworld is unvisited]Persephone's biding her time here until spring. This is her country, and you know to tread carefully. Even heroes have no rights here.[otherwise]Persephone is still here. All men must come to the realm of the dead one day, but you had hoped to find your way home first, even perhaps to know your name would live glorious beyond you.[end if] [entrance line]"
 
 To say entrance line:
 	let annoyance level be the annoyance of Persephone;
@@ -354,7 +356,7 @@ Calypso is in Ogygia.
 
 Chapter 7 - Scheria
 
-Nausikaa is in Scheria. "[if Nausikaa is skeptical]Nausikaa is here. You met her once, even younger than now, at a banquet. Perhaps she doesn't recognize you. Perhaps you made a bad impression, then.[otherwise]Nausikaa is sitting, cross-legged and indolent.[end if]"
+Nausikaa is in Scheria. "[if Nausikaa is skeptical]Nausikaa is here. You met her once, even younger than now, at a banquet. Perhaps she doesn't recognize you. Perhaps you made a bad impression, then.[otherwise]Nausikaa is sitting, cross-legged, braiding her hair.[end if]"
 
 The dogs are a thing. The dogs are in Scheria. "Fawn-colored sighthounds lie in the shade." Understand "dog" as dogs. Understand "sighthounds" as dogs. Understand "sighthound" as dogs. Understand "Eurymedusa" as dogs. Understand "Charis" as dogs. Instead of examining the dogs, try asking Nausikaa about "dogs".
 
@@ -374,7 +376,7 @@ The boys are scenery in Scheria. The description of boys is "Not old enough for 
 
 Chapter 8 - Ithaka
 
-Penelope is in Ithaka. "Penelope is among her women, drab in widow's weeds."
+Penelope is in Ithaka. "Penelope is among her women, her veil drawn across her face. Her maids are chattering as they wind wool."
 
 Book 4 - Interactions
 
