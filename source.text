@@ -120,8 +120,10 @@ Andromache is a witch. Andromache needs a rosemary branch. Andromache has the so
 
 Table of Andromache's responses
 topic	reply
-"Troy"	"She nearly spits. 'You've got nerve. You might as well ask after my son, or how I felt as the battle raged.'"
-"son/Astynax"	"'WRITEME something that prompts for the rosemary branch"
+"herself"	"She nearly spits. 'You've got nerve. You might as well ask after my son, or how I felt as the battle raged.'"
+"son/Astynax"	"'He lies unhallowed, and will continue so until I can burn him with proper ceremony.'"
+"battle/Troy"	"The shriek of arrows above our heads. Our food slowly dwindling. Siege is an ugly warfare."
+"Hector/Hektor/husband"	"'Braver than any of you.'"
 
 Test Andromache with "gonear andromache / gonear kirke / take rosemary branch / gonear andromache / give andromache rosemary branch".
 
@@ -149,11 +151,13 @@ Kirke is a witch. Kirke needs a full waterskin brought from Scheria. Kirke has t
 
 Table of Kirke's responses
 topic	reply
-"moly/drugs/potion"	"Kirke sniffs. 'My art is as it ever was. My spring has gone sour.'[paragraph break][remember waterskin]"
-"deer"	"'Too tall,' Kirke says. 'Spindly-legged. I worry that they'll trip over logs and die immobile in the forest.'"
+"moly/drugs/potion/mistakes"	"Kirke sniffs. 'My art is as it ever was. My spring has gone sour.'[paragraph break][remember waterskin]"
+"deer"	"'Too tall,' Kirke says. 'Spindly-legged. I worry that they'll trip over logs and die immobile in the forest. If only...' She shakes her head. 'No, it was a fine potion.'"
 "pigs"	"Kirke raises an eyebrow. 'What pigs, wanderer? Or are you offering an opinion?'[paragraph break]You back down hurriedly from her threat."
-"bears"	"'Gluttons. Always stealing my sister-witches' honey.'"
+"bears"	"'Gluttons. Always stealing my sister-witches' honey. I could tame that. Moly should be enough.'"
 "bees"	"'Some of my sister-witches are careless of theirs. I am not.'"
+"lions"	"'Stringy-maned.' Kirke then laughs, girlish. 'Still, nothing but big cats in the end. Would you like to pet them?'"
+"animals"	"'My menangerie is nothing to be proud of any more, I'm afraid.'"
 
 Test Kirke with "gonear kirke / ask kirke about moly / give kirke waterskin / gonear nausikaa / fill waterskin / ask nausikaa about water / fill waterskin / gonear kirke / give kirke waterskin"
 
@@ -221,7 +225,13 @@ Chapter 6 - Calypso
 [Problem: Calypso's wine is sour.
 Solution: Bring Calypso bees from Thrinacia.]
 
-Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "Calypso claps her hands together. The bees begin to hum more loudly, and she laughs, before tying her feather-hair back with a scrap of linen. 'You are welcome, cousins,' she says, and the bees begin to swarm around her head.". Calypso lives on Ogygia.
+Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "Calypso claps her hands together. The bees begin to hum more loudly, and she laughs, before tying her feather-hair back with a scrap of linen. 'You are welcome, cousins,' she says, and the bees begin to swarm around her head.". Calypso lives on Ogygia. The dialogue table of Calypso is the table of Calypso's responses.
+
+Table of Calypso's responses
+topic	reply
+"wine"	"Calypso grimaces. 'I'd offer you some, but it's gone thin and sour.'"
+"thin/sour"	"'My bees all died, you see. And my cousin is jealous of her animals.'"
+"feathers/birds"	"Calypso laughs. 'What of them?'"
 
 Test Calypso with "gonear calypso / gonear lampetia / follow bees / take beehive / gonear calypso / give calypso beehive".
 
@@ -288,7 +298,7 @@ To increase Persephone's annoyance:
 			
 Chapter 2 - Troy
 
-Andromache is in Troy. "Andromache stands unbowed before you." Instead of examining Andromache, try asking Andromache about "Troy".
+Andromache is in Troy. "Andromache stands unbowed before you." Instead of examining Andromache, try asking Andromache about "herself".
 
 The city is scenery in Troy. The hill is scenery in Troy. The walls are scenery in Troy. Scorch marks are scenery in Troy. Bodies are scenery in Troy. Arrowheads are scenery in Troy. Spear-shafts are scenery in Troy. Fire is scenery in Troy. Understand "fires" as fire.
 
@@ -314,6 +324,14 @@ Kirke is in Aeaea.
 The rosemary branch is a thing. The rosemary branch is in Aeaea.
 
 Instead of taking the swarm in the presence of Kirke, try asking Kirke about "bees". Instead of examining the swarm in the presence of Kirke, try asking Kirke about "bees".
+
+The deer is scenery in Aeaea. Instead of examining the deer, try asking Kirke about "deer".
+
+The pig is scenery in Aeaea. Understand "pigs" as pig. Instead of examining the pig, try asking Kirke about "pigs".
+
+The bear is scenery in Aeaea. Understand "bears" as bear. Instead of examining the bear, try asking Kirke about "bears".
+
+The lion is scenery in Aeaea. Understand "lions" as lion. Instead of examining the lion, try asking Kirke about "lion". Instead of petting the lion, say "You do not trust Kirke enough."
 
 Chapter 5 - Thrinacia
 
@@ -412,6 +430,9 @@ After giving:
 	solve the problem of the second noun.
 
 To decide whether (item - a thing) interests (character - a person):
+	if the character is Andromache and the item is the piece of driftwood:
+		say "Andromache's nostrils flare. 'I can collect that myself. Not good enough.'";
+		no;
 	if the character is Kirke and the item is the waterskin and the waterskin is full and the waterskin is brought from Scheria, yes;
 	if the character is Kirke and the item is the waterskin:
 		allow Kirke to be picky;
