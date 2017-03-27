@@ -1,5 +1,7 @@
 "islands & witches" by Betsy Haibel and Elizabeth Yalkut
 
+The story genre is "fantasy". The story description is "The wreck of a once-mighty city, and a long journey home." The story creation year is 2017.
+
 Release along with an interpreter.
 
 Book 1 - the Map
@@ -14,9 +16,9 @@ Djerba is an island. "Lizards dangle from boughs of trees. There are people spra
 
 Aeaea is an island. "Rosemary bushes as tall as a man. The air is full of scarlet and onyx bees, twice as big as they should be. A dozen ivory dice are lying in a bed of dark-green moss. Blindfolded herms flank a path from the shore into a grove of pine trees. There is a small stone house with yellow smoke emerging. Wolves, lions, and deer wander the island, nudging each other companiably. When they notice you, they go still."
 
-Thrinacia is an island. "Cows wander the island, their horns curving fantastically. A man is drinking pale yellow juice from a golden cup. He looks at you, turns his cup over, and pours his drink on the ground. Bees fill the air and stream toward a gap in the trees." 
+Thrinacia is an island. "Cows wander the island, their horns curving fantastically. A man is drinking pale yellow juice from a golden cup. He looks at you, turns his cup over, and pours his drink on the ground." 
 
-Ogygia is an island. "Apple trees are growing with white blossoms and blood-red fruit at the same time. Cypress trees reach to the sky. Birds, eerily silent, are flapping their wings; there are no bird’s-nests, but fallen feathers carpet the ground. Calypso’s hair is made of feathers."
+Ogygia is an island. "Apple trees are growing with white blossoms and blood-red fruit at the same time. Cypress trees reach to the sky. Birds, eerily silent, are flapping their wings; there are no bird’s-nests, but fallen feathers carpet the ground."
 
 Scheria is an island. "A small table is laden with rhytons full of barley beer. A barbarian's drink, but you would not reject it after your journey. White fabric is draped over bushes. Nearby, boys wrestle and throw javelins at a practice target, bright-eyed and laughing."
 
@@ -70,7 +72,7 @@ To stabilize (i - an island):
 	say "The ground rumbles and the breeze stills.[paragraph break][understandable directions]".
 	
 To say confusing directions:
-	say "You think Ithaka might be [one of]north[or]northeast[or]northwest[or]south[or]southwest[or]southeast[or]west[or]east[purely at random] of here, but you're not sure."
+	say "You think Ithaka might be [one of]north[or]northeast[or]northwest[or]south[or]southwest[or]southeast[or]west[or]east[purely at random] of here, but you're not sure. The stars are all wrong."
 
 To say understandable directions:
 	let L be the list of stabilized islands;
@@ -140,8 +142,6 @@ topic	reply
 "name"	"'Adah,' she murmurs."
 "fire/brazier"	"Adah gestures to the unlit brazier. [description of the brazier]"
 
-[@bhaibel, I'm not sure if you need text for a description of the brazier, but jic: It is three-legged, made out of bronze with etched and painted geometric patterns on the outside. You can see the figure of a horse emerging from the shapes, its proud head lifted as it stretches itself to run.]
-
 Test Adah with "gonear Adah / gonear andromache / take driftwood / gonear Adah / give Adah driftwood / light driftwood / gonear andromache / light driftwood / gonear Adah / give Adah driftwood".
 
 Chapter 4 - Kirke
@@ -160,6 +160,7 @@ topic	reply
 "bees"	"'Some of my sister-witches are careless of theirs. I am not.'"
 "lions"	"'Stringy-maned.' Kirke then laughs, girlish. 'Still, nothing but big cats in the end. Would you like to pet them?'"
 "animals"	"'My menangerie is nothing to be proud of any more, I'm afraid.'"
+"wolves"	"'Idiot puppies, really.'"
 
 Test Kirke with "gonear kirke / ask kirke about moly / give kirke waterskin / gonear nausikaa / fill waterskin / ask nausikaa about water / fill waterskin / gonear kirke / give kirke waterskin"
 
@@ -234,6 +235,8 @@ topic	reply
 "wine"	"Calypso grimaces. 'I'd offer you some, but it's gone thin and sour.'"
 "thin/sour"	"'My bees all died, you see. And my cousin is jealous of her animals.'"
 "feathers/birds"	"Calypso laughs. 'What of them?'"
+"apple"	"'Beautiful, aren't they,' Calypso replies. 'And ordinarily they make a lovely wine.'"
+"cypress/war/dusk/blood"	"'Oh, don't talk to me of mourning, or dusk, or any of that nonsense!' Calypso says. 'You men. You think nothing is serious until blood's involved.'"
 
 Test Calypso with "gonear calypso / gonear lampetia / follow bees / take beehive / gonear calypso / give calypso beehive".
 
@@ -249,6 +252,8 @@ Table of Nausikaa's responses
 topic	reply
 "dogs"	"Nausikaa can't hide her smile. 'My father breeds the best hounds. This is Eurymedusa, I named her when I was little, after my nurse from Aperaea, and this is Charis, my brother's favorite, she can track a bird through the air, and just see how pretty she is, all dappled like shadows.'"
 "fabric/cloth/laundry/water"	"'This is where I go swimming with my sisters, and where we wash our best clothes. It's a good place for ball games while the laundry dries.'[learn about water]"
+"name/self/introduction/banquet"	"'I don't see why I should talk to you.' Nausikaa says."
+"beer/hospitality/drink"	"Nausikaa looks uncomfortable, torn between the demands of hospitality and a fear of... something. Gossip?"
 
 To say learn about water:
 	now Scheria is watery;
@@ -287,6 +292,8 @@ Chapter 1 - the Underworld
 
 Persephone is in the Underworld. "[if the Underworld is unvisited]Persephone's biding her time here until spring. This is her country, and you know to tread carefully. Even heroes have no rights here.[otherwise]Persephone is still here. All men must come to the realm of the dead one day, but you had hoped to find your way home first, even perhaps to know your name would live glorious beyond you.[end if] [entrance line]"
 
+Instead of speech in the presence of Persephone, say entrance line. Instead of examining Persephone, say entrance line.
+
 To say entrance line:
 	let annoyance level be the annoyance of Persephone;
 	let new line be the line corresponding to an annoyance of annoyance level in the Table of Persephone's lines;
@@ -317,29 +324,32 @@ Chapter 3 - Djerba
 
 Adah is in Djerba. "A woman is wearing a white khiton. She is wearing gold and bronze pins in her hair." Understand "woman" as Adah. Instead of examining Adah, try asking Adah about "name".
 
-The brazier is a thing that is fixed in place. The brazier is in Djerba. "An unlit brazier." The description of the brazier is "Some charcoal remains in its bowl."
+The brazier is a thing that is fixed in place. The brazier is in Djerba. "An unlit brazier." The description of the brazier is "It is three-legged, made out of bronze with etched and painted geometric patterns on the outside. You can see the figure of a horse emerging from the shapes, its proud head lifted as it stretches itself to run."
 
 Chapter 4 - Aeaea
 
-Kirke is in Aeaea.
+Kirke is in Aeaea. "You see Kirke amongst her animals, idly scratching a wolf's head." Instead of examining Kirke, say "Kirke looks at you sharply. 'Do you think of me as meat for market?'".
 
 The rosemary branch is a thing. The rosemary branch is in Aeaea.
 
 Instead of taking the swarm in the presence of Kirke, try asking Kirke about "bees". Instead of examining the swarm in the presence of Kirke, try asking Kirke about "bees".
 
-The deer is scenery in Aeaea. Instead of examining the deer, try asking Kirke about "deer".
+The deer is scenery in Aeaea. Instead of examining the deer, try asking Kirke about "deer". Instead of petting the deer, say "They shy away from you.".
 
-The pig is scenery in Aeaea. Understand "pigs" as pig. Instead of examining the pig, try asking Kirke about "pigs".
+The pig is scenery in Aeaea. Understand "pigs" as pig. Instead of examining the pig, try asking Kirke about "pigs". Instead of petting the pig, say "What pig?".
 
-The bear is scenery in Aeaea. Understand "bears" as bear. Instead of examining the bear, try asking Kirke about "bears".
+The bear is scenery in Aeaea. Understand "bears" as bear. Instead of examining the bear, try asking Kirke about "bears". Instead of petting the bear, say "You do not trust Kirke enough.".
 
 The lion is scenery in Aeaea. Understand "lions" as lion. Instead of examining the lion, try asking Kirke about "lion". Instead of petting the lion, say "You do not trust Kirke enough."
 
+The wolf is scenery in Aeaea. Understand "wolves" as wolf. Instead of examining the lion, try asking Kirke about "wolves". Instead of petting the wolf, say "You do not trust Kirke enough."
+
+
 Chapter 5 - Thrinacia
 
-Lampetia is in Thrinacia.
+Lampetia is in Thrinacia. "Lampetia's here. Her tanned skin seems to glow." Instead of examining Lampetia, say "Her expression is placid, but her stance is wary."
 
-The swarm is a thing. Understand "bees" as the swarm. Understand "bee" as the swarm. The swarm is in Thrinacia. "You hear bees buzzing about." Instead of taking the swarm, say "A bee stings your leather glove and dies." Instead of examining the swarm, try following the swarm.
+The swarm is a thing. Understand "bees" as the swarm. Understand "bee" as the swarm. The swarm is in Thrinacia. "Bees fill the air and stream toward a gap in the trees." Instead of taking the swarm, say "A bee stings your leather glove and dies." Instead of examining the swarm, try following the swarm. Instead of petting the swarm, try taking the swarm.
 
 The beehive is a thing. The beehive is in Hammerspace.
 
@@ -352,11 +362,15 @@ Instead of following the swarm:
 
 Chapter 6 - Ogygia
 
-Calypso is in Ogygia.
+Calypso is in Ogygia. "Calypso’s hair is made of feathers." Instead of examining Calypso, say "Calypso returns your gaze, scanning you up and down long enough for it to be uncanny. 'Ah, but it's rude to stare so,' she interrupts herself."
+
+Apple trees are scenery in Ogygia. Understand "apple" as apple trees. Understand "apples" as apple trees. Instead of examining the apple trees, try asking Calypso about "apple". Understand "fruit" as apple trees.
+
+Cypress trees are scenery in Ogygia. Understand "cypress" as cypress trees. The description of the cypress trees is "Stark, and too tall. They carry dusk with them."
 
 Chapter 7 - Scheria
 
-Nausikaa is in Scheria. "[if Nausikaa is skeptical]Nausikaa is here. You met her once, even younger than now, at a banquet. Perhaps she doesn't recognize you. Perhaps you made a bad impression, then.[otherwise]Nausikaa is sitting, cross-legged, braiding her hair.[end if]"
+Nausikaa is in Scheria. "[if Nausikaa is skeptical]Nausikaa is here. You met her once, even younger than now, at a banquet. Perhaps she doesn't recognize you. Perhaps you made a bad impression, then.[otherwise]Nausikaa is sitting, cross-legged, braiding her hair.[end if]". Instead of examining Nausikaa, try asking Nausikaa about "name".
 
 The dogs are a thing. The dogs are in Scheria. "Fawn-colored sighthounds lie in the shade." Understand "dog" as dogs. Understand "sighthounds" as dogs. Understand "sighthound" as dogs. Understand "Eurymedusa" as dogs. Understand "Charis" as dogs. Instead of examining the dogs, try asking Nausikaa about "dogs".
 
