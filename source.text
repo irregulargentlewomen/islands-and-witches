@@ -266,7 +266,7 @@ Penelope is a witch. The dialogue table of Penelope is the Table of Penelope's r
 
 Table of Penelope's responses
 topic	reply
-"silence/nothing"	"[win game]"
+"silence/nothing/quiet"	"[win game]"
 
 Before speech in the presence of Penelope for the first time:
 	say "You greet your wife. She turns her head away. 'Do not speak and you say my name. If you need to speak, you will say my name.'";
@@ -505,3 +505,25 @@ Carry out petting:
 	if Nausikaa is skeptical:
 		now Nausikaa is trusting;
 		solve the problem of Nausikaa.
+
+Chapter 4 - Help system
+
+Understand "help" as helping. Understand the commands "instructions" or "hint" or "hints" or "menu" or "info" or "about" as "help". Helping is an action applying to nothing.
+
+Instead of helping:
+	If location is stabilized:
+		say "You've already solved this witch's problem.";
+	otherwise:
+		say the response corresponding to an island of location in the Table of Hints.
+		
+Table of Hints
+island	response
+the Open Ocean	"Nothing to do but sail onward."
+the Underworld	"Persephone giggles, an uncanny sound. 'I can run my land without mortal help, thank you."
+Troy	"Andromache is contemptuous. 'Kirke grows beautiful rosemary on Aeaea. It would be fitting for Astynax's funeral pyre.'"
+Djerba	"Adah smiles. 'Troy is full of fire, and of broken wood to carry it with.'"
+Aeaea	"Kirke rolls her eyes. 'Scherian water is the purest, but their springs are hidden.'[remember waterskin]"
+Thrinacia	"Lampetia makes a face. 'My goodness, this is a child's riddle! Night and day, just like me and my cousins.'"
+Ogygia	"Calypso thinks for a minute. 'Go visit Lampetia, on Thrinacia. The bees there only hassle her father's cows. She'll be willing to part with them."
+Scheria	"'They're guard dogs, too, you know. If they like you, you're probably safe.'"
+Ithaka	"'I've had twenty years to get used to the quiet, without my silver-tongued husband about. I find it pleasant, now.' Penelope looks pointedly at you."
