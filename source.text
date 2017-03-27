@@ -10,7 +10,7 @@ An island is a kind of room.
 
 Troy is an island. "The wreck of a once-mighty city. The remains of the city are on a hill by the mouth of the river Scamander. Double defensive walls ring the city, covered in scorch marks and badly damaged. There are bodies piled against the walls. Bronze arrowheads and broken spear-shafts litter the ground. Fires smoulder in the streets."
 
-Djerba is an island. "Lizards dangle from boughs of trees. A woman is wearing a white khiton. She is wearing gold and bronze pins in her hair."
+Djerba is an island. "Lizards dangle from boughs of trees."
 
 Aeaea is an island. "Rosemary bushes as tall as a man. The air is full of scarlet and onyx bees, twice as big as they should be. A dozen ivory dice are lying in a bed of dark-green moss. Blindfolded herms flank a path from the shore into a grove of pine trees. There is a small stone house with yellow smoke emerging. Wolves, lions, and deer wander the island."
 
@@ -28,27 +28,60 @@ The Underworld is a room. "The air smells of lilies and blood. It is always just
 
 Chapter 2 - Layout
 
+Troy is above the Underworld. Troy is west of Djerba. Troy is northeast of Aeaea. Troy is southwest of Thrinacia. Troy is north of Ogygia. Troy is south of Scheria. Troy is east of Ithaka. Scheria is west of Thrinacia. Scheria is northeast of Ithaka. Scheria is northwest of Djerba. Thrinacia is north of Djerba. Djerba is northeast of Ogygia. Ogygia is east of Aeaea. Ogygia is southeast of Ithaka. Aeaea is west of Ogygia. Aeaea is south of Ithaka.
+
 An island can be free-floating or stabilized. An island is usually free-floating.
 
-Before going a direction (called way):
+After printing the locale description of the Underworld:
+	say "You can escape upward.".
+
+After printing the locale description of a free-floating island:
+	unless the location is Ithaka, say confusing directions.
+
+After printing the locale description of a stabilized island, say understandable directions.
+
+Instead of going from a free-floating island, sail boldly into the unknown.
+Instead of going nowhere from a free-floating island, sail boldly into the unknown.
+Instead of going to a free-floating island, sail boldly into the unknown.
+Instead of going nowhere from the Open Ocean, sail boldly into the unknown.
+Instead of going nowhere from a stabilized island, move the player to the Open Ocean.
+
+To sail boldly into the unknown:
 	let Elsewhere be the list of free-floating islands;
-	if the location is an island:
+	if the location is an island and the location is free-floating:
 		remove the location from Elsewhere;
 	if the location is not Ithaka:
 		remove Ithaka from Elsewhere;
-	add the Underworld to Elsewhere;
+	if the location is not the Underworld:
+		add the Underworld to Elsewhere;
+	add the Open Ocean to Elsewhere;
 	add Elsewhere to Elsewhere;
 	add Elsewhere to Elsewhere;
-	add Ithaka to Elsewhere;
+	add Elsewhere to Elsewhere;
+	[you become more and more likely to find ithaka as you solve puzzles]
+	repeat with unused running through the list of stabilized islands:
+		add Ithaka to Elsewhere;
 	sort Elsewhere in random order;
 	let next be entry 1 of Elsewhere;
-	change the way exit of the location to next;
-	let reverse be the opposite of way;
-	change the reverse exit of next to the location.
+	move the player to next.
 
 To stabilize (i - an island):
-	say "The ground rumbles and the breeze stills.";
-	now i is stabilized.
+	now i is stabilized;
+	say "The ground rumbles and the breeze stills.[paragraph break][understandable directions]".
+	
+To say confusing directions:
+	say "You think Ithaka might be [one of]north[or]northeast[or]northwest[or]south[or]southwest[or]southeast[or]west[or]east[purely at random] of here, but you're not sure."
+
+To say understandable directions:
+	let L be the list of stabilized islands;
+	remove location from L;
+	if L is empty:
+		say "Your instruments aren't spinning about randomly any more, but you don't know where anything else is.";
+	otherwise:
+		let D be a list of text;
+		repeat with i running through L:
+			add "[i] is to [the best route from location to i]" to D;
+		say "You're sure that [D]. You could also try sailing in a new direction.".
 
 Book 2 - the Witches
 
@@ -83,7 +116,14 @@ Chapter 2 - Andromache
 [Problem: Andromache must burn Astyanax's body.
 Solution: Bring Andromache a rosemary branch from Aeaea.]
 
-Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry.".
+Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry.". Andromache lives on Troy. The dialogue table of Andromache is the Table of Andromache's responses.
+
+Table of Andromache's responses
+topic	reply
+"herself"	"She nearly spits. 'You've got nerve. You might as well ask after my son, or how I felt as the battle raged.'"
+"son/Astynax"	"'He lies unhallowed, and will continue so until I can burn him with proper ceremony.'"
+"battle/Troy"	"The shriek of arrows above our heads. Our food slowly dwindling. Siege is an ugly warfare."
+"Hector/Hektor/husband"	"'Braver than any of you.'"
 
 Test Andromache with "gonear andromache / gonear kirke / take rosemary branch / gonear andromache / give andromache rosemary branch".
 
@@ -92,7 +132,13 @@ Chapter 3 - Adah
 [Problem: Djerba's fire has gone out.
 Solution: Bring fire from Troy.]
 
-Adah is a witch. Adah needs a piece of driftwood. Adah has the solution text "Adah smiles dreamily and touches your cheek. 'Thank you, and may you reach your destination, O wanderer.'".
+Adah is a witch. Adah needs a piece of driftwood. Adah has the solution text "Adah smiles dreamily and touches your cheek. 'Thank you, and may you reach your destination, O wanderer.'". Adah lives on Djerba. The dialogue table of Adah is the Table of Adah's responses.
+
+Table of Adah's responses
+topic	reply
+"lotos/lotus"	"Adah smiles dreamily."
+"name"	"'Adah,' she murmurs."
+"fire/brazier"	"Adah gestures to the unlit brazier. [description of the brazier]"
 
 Test Adah with "gonear Adah / gonear andromache / take driftwood / gonear Adah / give Adah driftwood / light driftwood / gonear andromache / light driftwood / gonear Adah / give Adah driftwood".
 
@@ -105,9 +151,15 @@ Kirke is a witch. Kirke needs a full waterskin brought from Scheria. Kirke has t
 
 Table of Kirke's responses
 topic	reply
-"moly"	"WRITEME [remember waterskin]"
+"moly/drugs/potion/mistakes"	"Kirke sniffs. 'My art is as it ever was. My spring has gone sour.'[paragraph break][remember waterskin]"
+"deer"	"'Too tall,' Kirke says. 'Spindly-legged. I worry that they'll trip over logs and die immobile in the forest. If only...' She shakes her head. 'No, it was a fine potion.'"
+"pigs"	"Kirke raises an eyebrow. 'What pigs, wanderer? Or are you offering an opinion?'[paragraph break]You back down hurriedly from her threat."
+"bears"	"'Gluttons. Always stealing my sister-witches' honey. I could tame that. Moly should be enough.'"
+"bees"	"'Some of my sister-witches are careless of theirs. I am not.'"
+"lions"	"'Stringy-maned.' Kirke then laughs, girlish. 'Still, nothing but big cats in the end. Would you like to pet them?'"
+"animals"	"'My menangerie is nothing to be proud of any more, I'm afraid.'"
 
-Test Kirke with "gonear kirke / ask kirke about moly / give kirke waterskin / gonear nausikaa / fill waterskin / follow nausikaa / ask nausikaa about water / follow nausikaa / fill waterskin / gonear kirke / give kirke waterskin"
+Test Kirke with "gonear kirke / ask kirke about moly / give kirke waterskin / gonear nausikaa / fill waterskin / ask nausikaa about water / fill waterskin / gonear kirke / give kirke waterskin"
 
 To say remember waterskin:
 	If the waterskin is in Hammerspace:
@@ -138,7 +190,7 @@ Underworld	"The queen of the dead does not heal."
 
 Chapter 5 - Lampetia
 
-Lampetia is a witch. The dialogue table of Lampetia is the Table of Lampetia's responses.
+Lampetia is a witch. The dialogue table of Lampetia is the Table of Lampetia's responses. Lampetia lives on Thrinacia.
 
 Table of Lampetia's responses
 topic	reply
@@ -173,32 +225,31 @@ Chapter 6 - Calypso
 [Problem: Calypso's wine is sour.
 Solution: Bring Calypso bees from Thrinacia.]
 
-Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "Calypso claps her hands together. The bees begin to hum more loudly, and she laughs, before tying her feather-hair back with a scrap of linen. 'You are welcome, cousins,' she says, and the bees begin to swarm around her head.". Calypso lives on Ogygia.
+Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "Calypso claps her hands together. The bees begin to hum more loudly, and she laughs, before tying her feather-hair back with a scrap of linen. 'You are welcome, cousins,' she says, and the bees begin to swarm around her head.". Calypso lives on Ogygia. The dialogue table of Calypso is the table of Calypso's responses.
+
+Table of Calypso's responses
+topic	reply
+"wine"	"Calypso grimaces. 'I'd offer you some, but it's gone thin and sour.'"
+"thin/sour"	"'My bees all died, you see. And my cousin is jealous of her animals.'"
+"feathers/birds"	"Calypso laughs. 'What of them?'"
 
 Test Calypso with "gonear calypso / gonear lampetia / follow bees / take beehive / gonear calypso / give calypso beehive".
 
 Chapter 7 - Nausikaa
 
-Nausikaa is a witch. The dialogue table of Nausikaa is the Table of Nausikaa's responses. Nausikaa can be trusting or skeptical. Nausikaa is skeptical. The solution text of Nausikaa is "The wariness fades from Nausikaa's expression. ".
+Nausikaa is a witch. The dialogue table of Nausikaa is the Table of Nausikaa's responses. Nausikaa can be trusting or skeptical. Nausikaa is skeptical. The solution text of Nausikaa is "The wariness fades from Nausikaa's expression. ". Nausikaa lives on Scheria.
 
 Before speech in the presence of Nausikaa:
 	Unless Nausikaa is trusting or the topic understood includes "dogs":
 		say "Nausikaa frowns at you skeptically." instead.
 
-Instead of following Nausikaa:
-	if Nausikaa knows "water":
-		now Scheria is watery;
-		say "She leads you to a clear spring.";
-	otherwise:
-		say "Nausikaa looks at you skeptically. You stop, to keep her trust.".
-
 Table of Nausikaa's responses
 topic	reply
 "dogs"	"Nausikaa can't hide her smile. 'My father breeds the best hounds. This is Eurymedusa, I named her when I was little, after my nurse from Aperaea, and this is Charis, my brother's favorite, she can track a bird through the air, and just see how pretty she is, all dappled like shadows.'"
-"water"	"This is where I go swimming with my sisters, and where we wash our best clothes. It's a good place for ball games while the laundry dries.[learn about water]"
+"fabric/cloth/laundry/water"	"'This is where I go swimming with my sisters, and where we wash our best clothes. It's a good place for ball games while the laundry dries.'[learn about water]"
 
 To say learn about water:
-	now Nausikaa knows "water";
+	now Scheria is watery;
 
 Test Nausikaa with "gonear nausikaa / ask nausikaa about water / ask nausikaa about dogs / pet dogs / ask nausikaa about water".
 
@@ -247,9 +298,11 @@ To increase Persephone's annoyance:
 			
 Chapter 2 - Troy
 
-Andromache is in Troy.
+Andromache is in Troy. "Andromache stands unbowed before you." Instead of examining Andromache, try asking Andromache about "herself".
 
-A piece of driftwood is a branch. A piece of driftwood is in Troy.
+The city is scenery in Troy. The hill is scenery in Troy. The walls are scenery in Troy. Scorch marks are scenery in Troy. Bodies are scenery in Troy. Arrowheads are scenery in Troy. Spear-shafts are scenery in Troy. Fire is scenery in Troy. Understand "fires" as fire.
+
+A piece of driftwood is a branch. A piece of driftwood is in Troy. "Driftwood lies scattered about the dead beach."
 
 Instead of burning the piece of driftwood:
 	if the location is Troy:
@@ -260,7 +313,9 @@ Instead of burning the piece of driftwood:
 
 Chapter 3 - Djerba
 
-Adah is in Djerba.
+Adah is in Djerba. "A woman is wearing a white khiton. She is wearing gold and bronze pins in her hair." Understand "woman" as Adah. Instead of examining Adah, try asking Adah about "name".
+
+The brazier is a thing that is fixed in place. The brazier is in Djerba. "An unlit brazier." The description of the brazier is "Some charcoal remains in its bowl."
 
 Chapter 4 - Aeaea
 
@@ -268,11 +323,21 @@ Kirke is in Aeaea.
 
 The rosemary branch is a thing. The rosemary branch is in Aeaea.
 
+Instead of taking the swarm in the presence of Kirke, try asking Kirke about "bees". Instead of examining the swarm in the presence of Kirke, try asking Kirke about "bees".
+
+The deer is scenery in Aeaea. Instead of examining the deer, try asking Kirke about "deer".
+
+The pig is scenery in Aeaea. Understand "pigs" as pig. Instead of examining the pig, try asking Kirke about "pigs".
+
+The bear is scenery in Aeaea. Understand "bears" as bear. Instead of examining the bear, try asking Kirke about "bears".
+
+The lion is scenery in Aeaea. Understand "lions" as lion. Instead of examining the lion, try asking Kirke about "lion". Instead of petting the lion, say "You do not trust Kirke enough."
+
 Chapter 5 - Thrinacia
 
 Lampetia is in Thrinacia.
 
-The swarm is a thing. Understand "bees" as the swarm. Understand "bee" as the swarm. The swarm is in Thrinacia. "You hear bees buzzing about." Instead of taking the swarm, say "A bee stings your leather glove and dies."
+The swarm is a thing. Understand "bees" as the swarm. Understand "bee" as the swarm. The swarm is in Thrinacia. "You hear bees buzzing about." Instead of taking the swarm, say "A bee stings your leather glove and dies." Instead of examining the swarm, try following the swarm.
 
 The beehive is a thing. The beehive is in Hammerspace.
 
@@ -289,11 +354,27 @@ Calypso is in Ogygia.
 
 Chapter 7 - Scheria
 
-Nausikaa is in Scheria. Scheria is arid. The dogs are a thing. The dogs are in Scheria. "Fawn-colored sighthounds lie in the shade."
+Nausikaa is in Scheria. "[if Nausikaa is skeptical]Nausikaa is here. You met her once, even younger than now, at a banquet. Perhaps she doesn't recognize you. Perhaps you made a bad impression, then.[otherwise]Nausikaa is sitting, cross-legged and indolent.[end if]"
+
+The dogs are a thing. The dogs are in Scheria. "Fawn-colored sighthounds lie in the shade." Understand "dog" as dogs. Understand "sighthounds" as dogs. Understand "sighthound" as dogs. Understand "Eurymedusa" as dogs. Understand "Charis" as dogs. Instead of examining the dogs, try asking Nausikaa about "dogs".
+
+Scheria is arid.
+
+The rhyton is scenery in Scheria. The description of the rhyton is "Horn, barely yellowed, barely translucent. The dog's eyes are dark-colored from the beer behind them."
+
+Beer is scenery in Scheria. The description of beer is "Fresh, from the smell of it." Instead of drinking the beer, say "You'd rather not presume on Nausikaa's hospitality. Her parents would know." Instead of taking the beer, try drinking the beer.
+
+The fabric is scenery in Scheria. The description of fabric is "Newly laundered and half-dry."
+
+After examining the fabric:
+	say "Nausikaa notices you thumbing the fabric, and raises a hand to stop you.";
+	try asking Nausikaa about "fabric".	
+
+The boys are scenery in Scheria. The description of boys is "Not old enough for war, yet, and therefore still lucky." 
 
 Chapter 8 - Ithaka
 
-Penelope is in Ithaka.
+Penelope is in Ithaka. "Penelope is among her women, drab in widow's weeds."
 
 Book 4 - Interactions
 
@@ -306,24 +387,33 @@ Carry out telling a witch about something:
 		if the topic understood includes topic entry:
 			say "[reply entry][paragraph break]";
 			rule succeeds;
-	say "[the noun] looks at you blankly.";
+	if the noun is not Penelope, say "[the noun] looks at you blankly.";
 	stop the action.
+
+Report telling a witch about something:
+	stop the action instead.
 
 Carry out asking a witch about something:
 	repeat through the dialogue table of the noun:
 		if the topic understood includes topic entry:
 			say "[reply entry][paragraph break]";
 			rule succeeds;
-	say "[the noun] looks at you blankly.";
+	if the noun is not Penelope, say "[the noun] looks at you blankly.";
 	stop the action.
+
+Report asking a witch about something:
+	stop the action instead.
 
 Carry out answering a witch that something:
 	repeat through the dialogue table of the noun:
 		if the topic understood includes topic entry:
 			say "[reply entry][paragraph break]";
 			rule succeeds;
-	say "[the noun] looks at you blankly.";
+	if the noun is not Penelope, say "[the noun] looks at you blankly.";
 	stop the action.
+
+Report answering a witch that something:
+	stop the action instead.
 
 Chapter 2 - Barter Puzzles
 
@@ -340,6 +430,9 @@ After giving:
 	solve the problem of the second noun.
 
 To decide whether (item - a thing) interests (character - a person):
+	if the character is Andromache and the item is the piece of driftwood:
+		say "Andromache's nostrils flare. 'I can collect that myself. Not good enough.'";
+		no;
 	if the character is Kirke and the item is the waterskin and the waterskin is full and the waterskin is brought from Scheria, yes;
 	if the character is Kirke and the item is the waterskin:
 		allow Kirke to be picky;
@@ -392,6 +485,7 @@ Check petting:
 	unless the noun is dogs, say "That doesn't seem like a good idea." instead.
 
 Carry out petting:
-	now Nausikaa is trusting;
 	say "You gently scratch behind their ears. The dogs yelp happily and press closer, nosing at you.[paragraph break]";
-	solve the problem of Nausikaa.
+	if Nausikaa is skeptical:
+		now Nausikaa is trusting;
+		solve the problem of Nausikaa.
