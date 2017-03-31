@@ -14,7 +14,7 @@ Troy is an island. "The wreck of a once-mighty city. The remains of the city are
 
 Djerba is an island. "Lizards dangle from boughs of trees. There are people sprawled on the ground, as though they have been felled by a blow, but there are no traces of a battle, and no one is wounded. Something is missing here, perhaps someone, but no one is mourning. No one pays attention to you as you walk toward a shrine wth a cold brazier and a heap of clay offering-figures."
 
-Aeaea is an island. "Rosemary bushes as tall as a man. The air is full of scarlet and onyx bees, twice as big as they should be. A dozen ivory dice are lying in a bed of dark-green moss. Blindfolded herms flank a path from the shore into a grove of pine trees. There is a small stone house with yellow smoke emerging. Wolves, lions, and deer wander the island, nudging each other companiably. When they notice you, they go still."
+Aeaea is an island. "Rosemary bushes as tall as a man cover the island. The air is full of scarlet and onyx bees, twice as big as they should be. Blindfolded herms flank a path from the shore into a grove of pine trees. Follow the path, and there is a small stone house with yellow smoke emerging. Wolves, lions, and deer wander the island, nuzzling each other companiably. When they notice you, they go still."
 
 Thrinacia is an island. "Cows wander the island, their horns curving fantastically. A man is drinking pale yellow juice from a golden cup. He looks at you, turns his cup over, and pours his drink on the ground." 
 
@@ -24,7 +24,7 @@ Scheria is an island. "A small table is laden with rhytons full of barley beer. 
 
 Ithaka is an island. "The hills are made of pale cream and purple-gray stone. A woman is carrying a bronze-and-gold bowl with lead loom-weights in it. A woman is carrying a basket full of unwashed wool, greasy and full of grassy debris. A goat with yellow eyes follows you."
 
-The Open Ocean is a room. "The water is dark, the color of unwatered wine. A raft is floating on the ocean. A bird is sitting on the raft. Seaweed is drying on the raft. The wind is coming from the north and smells of snow."
+The Open Ocean is a room. "The water is dark, the color of unwatered wine. A raft is floating on the ocean. A bird is sitting on the raft, its bright eyes shut. The wind is coming from the north and smells of snow."
 
 The Underworld is a room. "The air smells of lilies and blood. It is always just past sunset. There is a three-headed dog, spotted like a hyena, lying nearby. A iron double axe-head with dried blood on its blade is sticking out of the rocky ground."
 
@@ -118,7 +118,7 @@ Chapter 2 - Andromache
 [Problem: Andromache must burn Astyanax's body.
 Solution: Bring Andromache a rosemary branch from Aeaea.]
 
-Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry. It is time for you to be on your way, and leave Andromache to her grief, and her captivity. She was a princess of Troy, and beloved, and powerful, and now she is a slave.". Andromache lives on Troy. The dialogue table of Andromache is the Table of Andromache's responses.
+Andromache is a witch. Andromache needs a rosemary branch. Andromache has the solution text "Andromache presses her fist to her lips and holds the rosemary branch to one of the fires smouldering nearby. The branch catches fire. Smoke begins to curl into the air. She takes a deep breath and throws the burning rosemary on a pile of wood nearby.There is a scent of roasting meat and Andromache begins to cry. It is time for you to be on your way, and leave Andromache to her grief, and her captivity. She was a princess of Troy, and beloved, and powerful, and now she is a slave. ". Andromache lives on Troy. The dialogue table of Andromache is the Table of Andromache's responses.
 
 Table of Andromache's responses
 topic	reply
@@ -159,7 +159,7 @@ topic	reply
 "bears"	"'Gluttons. Always stealing my sister-witches' honey. I could tame that. Moly should be enough.'"
 "bees"	"'Some of my sister-witches are careless of theirs. I am not.'"
 "lions"	"'Stringy-maned.' Kirke then laughs, girlish. 'Still, nothing but big cats in the end. Would you like to pet them?'"
-"animals"	"'My menangerie is nothing to be proud of any more, I'm afraid.'"
+"animals"	"'My menagerie is nothing to be proud of any more, I'm afraid.'"
 "wolves"	"'Idiot puppies, really.'"
 
 Test Kirke with "gonear kirke / ask kirke about moly / give kirke waterskin / gonear nausikaa / fill waterskin / ask nausikaa about water / fill waterskin / gonear kirke / give kirke waterskin"
@@ -228,7 +228,7 @@ Chapter 6 - Calypso
 [Problem: Calypso's wine is sour.
 Solution: Bring Calypso bees from Thrinacia.]
 
-Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "Calypso claps her hands together. The bees begin to hum more loudly, and she laughs, before tying her feather-hair back with a scrap of linen. 'You are welcome, cousins,' she says, and the bees begin to swarm around her head.". Calypso lives on Ogygia. The dialogue table of Calypso is the table of Calypso's responses.
+Calypso is a witch. Calypso needs the beehive. Calypso has a solution text "Calypso claps her hands together. The bees begin to hum more loudly, and she laughs, before tying her feather-hair back with a scrap of linen. 'You are welcome, cousins,' she says, and the bees begin to swarm around her head. ". Calypso lives on Ogygia. The dialogue table of Calypso is the table of Calypso's responses.
 
 Table of Calypso's responses
 topic	reply
@@ -280,7 +280,7 @@ Report answering Penelope that something:
 	stop the action.
 
 To say win game:
-	end the story saying "Penelope has recognized you. Your journey home has ended. The suitors must still be dealt with, and your father mourns your in the orchard you planted with him long ago, but for now, you can rest; tomorrow is time enough to seek glory. This island knows you now, and you are home." instead.
+	end the story saying "Penelope has recognized you. Your journey home has ended. The suitors must still be dealt with, and your father mourns you in the orchard of pears and figs you planted with him long ago, but for now, you can rest; tomorrow is time enough to seek glory. This island knows you now, and you are home." instead.
 
 Test Penelope with "gonear penelope / answer penelope that lies / answer penelope silence".
  
